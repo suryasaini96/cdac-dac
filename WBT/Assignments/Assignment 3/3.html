@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script type="text/javascript">
+            var a = prompt("Enter number 1: ");
+            var b = prompt("Enter number 2: ");
+            var op = prompt("Enter operation [+,-,*,/]: ");
+            var res = 0;
+            switch (op){
+                case "+": res = parseInt(a) + parseInt(b); break;
+                case "-": res = parseInt(a) - parseInt(b); break;
+                case "/": res = parseInt(a) / parseInt(b); break;
+                case "*": res = parseInt(a) * parseInt(b); break;
+                default: alert("Wrong input!"); 
+            }
+            document.write("Result: " + res);
+        </script>
+
+    </head>
+
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script type="text/javascript">
+            var words = ["hello","world","these","are","words"];
+            var res = words.map(function(word){
+                    var first=0;
+                    var last=word.length-1;
+                    var res = Array.from(word);
+                    while (first<last){
+                        var t = res[first];
+                        res[first] = res[last];
+                        res[last] = t;
+                        first++;
+                        last--;
+                    }
+                    return res.join("");
+                });    
+            document.write(res.sort());
+        </script>
+    </head>
+
+    <body>
+    </body>
+</html>

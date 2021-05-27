@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script type="text/javascript">
+            function emp(empid, empname, salary){
+                this.empid = empid;
+                this.empname = empname;
+                this.salary = salary;
+                this.empdisplay = empdisplay;
+            }
+
+            function empdisplay(){
+                document.write("Emp id: " + this.empid + "<br>");
+                document.write("Emp name: " + this.empname + "<br>");
+                document.write("Emp salary: " + this.salary + "<br><br>");
+            }
+
+            emp1 = new emp(1, "Ram", 30000);
+            emp2 = new emp(2, "Shyam", 50000);
+            emp3 = new emp(3, "Ghanshyam", 60000);
+            emp4 = new emp(4, "Dholu", 45000);
+            var arr = [emp1,emp2,emp3,emp4];
+
+            arr.forEach(function(emp){emp.empdisplay();})
+
+        </script>
+    </head>
+
+    <body>
+    </body>
+</html>

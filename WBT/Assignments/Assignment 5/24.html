@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            form {
+                text-align: center;
+                border: 1px solid black;
+                width: 45%;
+                padding: 10px;
+            }
+            textarea{
+                width: 95%;
+                height: 150px;
+            }
+        </style>
+        <script type="text/javascript">
+            function display(){
+                var start = parseInt(document.getElementById("start").value);
+                var end = parseInt(document.getElementById("end").value);
+                var mul = parseInt(document.getElementById("mul").value);
+                document.getElementById("textArea").value = calculate(start,end,mul);
+            }
+            
+            function calculate(start,end,mul){
+                var res = "";
+                while(start<=end){
+                    res+= start + " times " + mul + " = " + start*mul + "\n";
+                    start++; 
+                }
+                return res;
+            }
+            function reset(){
+                document.getElementById("start").value = "";
+                document.getElementById("end").value = "";
+                document.getElementById("mul").value = "";
+                document.getElementById("textArea").value = "";
+            }
+        </script>
+    </head>
+
+    <body>
+        <form>
+            Start number: <input type="text" name="start" id="start" size="10">
+            End number: <input type="text" name="end" id="end" size="10">
+            Multiply by: <input type="text" name="mul" id="mul" size="10"><br><br>
+            <input type="button" value="Times Table" onclick="display()"><br><br>
+            <input type="button" value="Reset" onclick="reset()"><br><br>
+            <textarea name="textArea" id="textArea"></textarea>
+        </form>
+    </body>
+</html>

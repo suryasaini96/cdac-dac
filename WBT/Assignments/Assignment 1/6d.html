@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <fieldset style="width:50%;">
+        <h2>Internet Usage Survery</h2>
+        <p>This survey is being conducted to help identify
+            the Internet usage patterns of ours customers.
+            Please take a few momments to complete and submit 
+            this short form. Thank you for you cooperation.
+        </p>
+        <table width=100% cellpadding=20>
+            <tr>
+                <td>What type of Internet connection do you have?</td>
+                <td><select name="conn">
+                    <option>Dial-Up</option>
+                    <option>DSL</option>
+                    <option>High Speed Cable</option>
+                    <option>Other</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>What type of computer do you use the most at home</td>
+                <td><input type="radio" name="type">Desktop <input type="radio" name="type">Laptop</td>
+            </tr>
+            <tr>
+                <td>How would you descrive your main reason for using the Internet?</td>
+                <td>
+                    <input type="radio" name="reason">To do work-related activities <br>
+                    <input type="radio" name="reason">To do school-related activities <br>
+                    <input type="radio" name="reason">For entertainment purposes <br>
+                    <input type="radio" name="reason">Other activities <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <fieldset style="height: 200px; width: 400px;">
+                        <legend>Types of sites visited</legend>
+                        What types of web sites do you access most often?<br>
+                        Check all that apply.<br><br>
+                        <input type="radio" name="sites">Self Improvement <br>
+                        <input type="radio" name="sites">Entertainment <br>
+                        <input type="radio" name="sites">News and Sports<br>
+                        <input type="radio" name="sites">Reference <br>
+                        <input type="radio" name="sites">Email<br>
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset  style="height: 200px; width: 400px;">
+                        <legend>Time spent using Internet</legend>
+                        During an average week, how long do you spend online?<br><br>
+                        <input type="radio" name="time">0-3 Hours <br>
+                        <input type="radio" name="time">4-6 Hours <br>
+                        <input type="radio" name="time">7-10 Hours <br>
+                        <input type="radio" name="time">11-14 Hours <br>
+                        <input type="radio" name="time">15+ Hours <br>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2>
+                    Please comment on your opinions concerning Internet privacy and safety.
+                    <textarea name="opinion" rows="8" style="width:100%;"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>First Name: <input type="text" name="fname"></td>
+                <td>Last Name: <input type="text" name="lname"></td>
+            </tr>
+            <tr>
+                <td>Age: <input type="number" min=1 max=100 name="age"></td>
+                <td>Zip Code: <input type="number" name="zipcode"></td>
+            </tr>
+            <tr>
+                <td align="right"><input type="submit" name="submit" value="Click to Submit"></td>
+                <td><input type="reset" name="reset" value="Clear Form"></td>
+            </tr>
+        </table>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+while read line
+	do
+		if [[ -n $line ]]
+			then 
+				echo $line >> noEmptyLine
+		fi		
+	done < sample

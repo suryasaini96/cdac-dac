@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Solution 1:
+ 
+find . -perm /o+w -type f -exec chmod o-w+r {} \;
+echo "Write permissions of others changed."
+
+# Solution 2: 
+# Working:
+# Find all the files in current directory onwards which have write permissions for others. Used awk command to go line by line in the output. Used the line output from awk into chmod to change permission. xargs is needed because chmod doesn't accept input from standard input.
+
+# find . -perm /o+w -type f | awk '{print $0}' | xargs chmod o-w+r
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script type="text/javascript">
+            var today = new Date();
+            var yearEnd = new Date(today.getFullYear()+1 + "-01-01");
+            var dayInMillis = 1000*60*60*24;
+            var days = parseInt((yearEnd.getTime() - today.getTime())/dayInMillis) + 1; //including today
+            var dayMap = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var monthMap = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+            document.write("Today is " + dayMap[today.getDay()] + ", " + today.getDate() + " " + monthMap[today.getMonth()] + " " + today.getFullYear() + ", ");
+            document.write("Welcome, and Good Afternoon to You. <br>");
+            document.write("Number of days left till end of year: " + days); 
+        </script>
+    </head>
+
+    <body>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+1. Write a script that performs following operations on the given set of files?	(15)
+
+a) displays the total count of files
+b) displays the count of *.pdf files and *.docx
+c) rename all *.pdf to *.docx
+d) displays the count of *.pdf files and *.docx
+e) displays only those files which have underscore '_' in their names
+
+msexchange.qlv
+Necessary Compliance Violations.docx
+New Doc 12-23-2020 16.51.pdf
+Open Cases.csv
+OPS-94632_new.tar
+OS-Windows.pdf
+QQL.json
+Ransomware.docx
+Red_Hat Reference Guide.pdf
+Script Analysis.xlsx
+Script page.jpg
+SolarWinds_Supply-Chain_Attack_UDdashboard.json
+Splunk_PC_App.png
+Splunk_VM_App.png
+Studio_Malware_July_2013.xlsx
+Troubleshooting Agent Permission Issues for Windows.pdf
+UDC_Demo_20210106.xml
+Video 2020-11-10 at 7.12.43 PM.mp4
+VMware-workstation-full-15.5.5-16285975.exe
+VMware-workstation-full-16.0.0-16894299.exe
+WhatsApp Image 2020-11-05 at 2.47.06 PM.jpeg
+win.txt
+
+2. Write a script that displays the user information on the linux box in the following format:	(10)
+Username	Shell assigned to that user
+
+3. Write a program to create three process. All process have different parents. Two process will be writing a string data to pipe and one will be reading from that pipe and print on console.(Note: Use unnamed pipe)	(15)

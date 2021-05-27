@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Write a script where user enters a username and outputs says if that user is present on linux box or not ?
+
+read -p "Enter username: " uname
+
+var=$(cat /etc/passwd | grep -w $uname)
+
+if [[ -n $var ]] 
+	then
+		echo "User '$uname' exists on the system."
+	else
+		echo "User '$uname' does not exist on the system."
+fi
+

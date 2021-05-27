@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script type="text/javascript">
+            function ci(p,r,t){
+                var p = parseFloat(p);
+                var r = parseFloat(r);
+                var t = parseFloat(t);
+                var ci = p*Math.pow((1+r/100),t) - p;
+                document.write(ci);
+            }
+            ci(100,100,1);
+        </script>
+    </head>
+
+    <body>
+        <h3>Calculate Compound Interest</h3>
+    </body>
+</html>

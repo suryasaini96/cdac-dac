@@ -1,0 +1,115 @@
+Assignment Q1
+-------------
+What does this each location in / contains?
+
+Answer Q1:
+
+The root directory contains important information such system configuration files, binaries, variables,
+process information, user data etc.
+
+/ – Root
+/bin – User Binaries
+/sbin – System Binaries
+/etc – Configuration Files
+dev – Device Files
+/proc – Process Information
+/var – Variable Files
+/tmp – Temporary Files
+/usr – User Programs
+/home – Home Directories
+/boot – Boot Loader Files
+/lib – System Libraries
+/opt – Optional add-on Applications
+/mnt – Mount Directory
+/media – Removable Media Devices
+/srv – Service Data
+
+
+Assignment Q2 
+-------------
+How to set umask as temp & permanent?
+
+Answer Q2:
+
+1. Temporary 
+
+	umask <value>
+	eg: umask 044
+
+2. Permanent (for non-login session for regular user)
+
+	Edit the umask in "bashrc" file: vi /etc/bashrc
+
+	if [ $UID -gt 199 ] && [ "`/usr/bin/id -gn`" = "`/usr/bin/id -un`" ]; then
+	    umask 033							     
+   	else									     
+      	umask 022
+		
+	Restart the terminal.
+	Check umask and it should be 033 now.
+
+
+Assignment Q3
+-------------
+Creata a user 'user1' 
+Login as that user and create two directories 'dir1' and 'dir2'
+Create 100 files in dir1 and 100 files in dir2
+Copy all files of dir1 to dir2
+Move all files of dir2 to dir1
+
+Result: Your dir2 should be empty now
+
+- What is the permission of the directory right now?
+- add 2 files in the directory - what is the permission of these two files? Is it same as that of dir2
+- Run the command chmod -R 777 dir2
+- Create two new files named 'testfile1' & 'testfile2' and observe the  permission of these two files? Is it same as that of dir2
+
+
+Answer Q3:
+
+[surya@localhost ~]$ su - root
+Password: 
+Last login: Fri May  7 09:34:17 PDT 2021 on pts/1
+[root@localhost ~]# useradd user1
+[root@localhost ~]# passwd user1
+Changing password for user user1.
+New password: 
+BAD PASSWORD: The password is shorter than 7 characters
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+[root@localhost ~]# exit
+logout
+[surya@localhost ~]$ su - user1
+Password: 
+[user1@localhost ~]$ mkdir dir1
+[user1@localhost ~]$ mkdir dir2
+[user1@localhost ~]$ cd dir1
+[user1@localhost dir1]$ touch abc{1..100}
+[user1@localhost dir1]$ cd ../dir2
+[user1@localhost dir2]$ touch xyz{1..100}
+[user1@localhost dir2]$ cp ../dir1/abc{1..100} .
+[user1@localhost dir2]$ mv * ../dir1/
+[user1@localhost dir2]$ stat -c '%a' ../dir2
+775
+[user1@localhost dir2]$ touch file1 file2
+[user1@localhost dir2]$ ls -l
+total 0
+-rw-rw-r--. 1 user1 user1 0 May  7 10:35 file1
+-rw-rw-r--. 1 user1 user1 0 May  7 10:35 file2
+[user1@localhost dir2]$ chmod -R 777 ../dir2
+[user1@localhost dir2]$ touch testfile1 testfile2
+[user1@localhost dir2]$ ls -l
+total 0
+-rwxrwxrwx. 1 user1 user1 0 May  7 10:35 file1
+-rwxrwxrwx. 1 user1 user1 0 May  7 10:35 file2
+-rw-rw-r--. 1 user1 user1 0 May  7 10:37 testfile1
+-rw-rw-r--. 1 user1 user1 0 May  7 10:37 testfile2
+
+
+Conclusion:-
+
+1. dir2 was empty in the end after all operations.
+2. Permission of dir2 was 775.
+3. Two files added in dir2 did not have the same permissions as dir2. They were created with default permissions of 664 (umask 002).
+4. Changed dir2 permission to 777 which changed directory and its sub files permission to 777.
+5. However, creating two new files "testfile1" & "testfile2" were made with default permissions of 664 (umask 002).

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Write a script where username is entered and its userid is displayed in the output
+
+read -p "Enter username: " uname
+
+cat /etc/passwd | grep -w $uname | cut -d':' -f3
+
+# cat /etc/passwd | awk -F':' -v uname="$uname" '{ if ($1 == uname) print $3}'
