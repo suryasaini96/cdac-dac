@@ -3,20 +3,49 @@
 <html>
     <head>
         <script type="text/javascript">
-            function display(){
-                var r = parseInt(document.getElementById("radius").value);
-                document.getElementById("area").innerHTML = (Math.PI*r*r).toFixed(2);
-                document.getElementById("circum").innerHTML = (2*Math.PI*r).toFixed(2);
-            }   
+            function submitQuery(){
+                var str = document.getElementById("str").value;
+                var subStr = document.getElementById("subStr").value;
+                var repStr = document.getElementById("repStr").value;
+                var options = document.getElementsByName("op");
+                var checked = Array.from(options).filter(op => op.checked)[0].value;
+                var result;
+                switch (checked){
+                    case "sub": result = search(str,subStr); break;
+                    case "upper": result = str.toUpperCase(); break;
+                    case "lower": result = str.toLowerCase(); break;
+                    case "trim": result = str.trim(); break;            
+                    case "concat": result = str.concat(subStr); break;
+                    case "replace": result = str.replace(subStr, repStr); break;
+                }
+
+                function search(str, subStr){
+                    if (str.indexOf(subStr) == -1)
+                        return subStr + " not found in " + str;
+                    return subStr + " found in " + str + " at position " + (str.indexOf(subStr)+1);
+                }
+                
+                document.getElementById("result").innerHTML = result;
+            }
+            
         </script>
     </head>
 
     <body>
         <form>
-            Enter Radius: <input type="text" name="radius" id="radius"><br><br>
-            <input type="button" value = "display" onclick="display()"><br><br>
-            Area: <span id="area"></span><br><br>
-            Circumference: <span id="circum"></span><br>
+            Enter String: <input type="text" name="str" id="str"><br><br>
+            Enter Sub String: <input type="text" name="subStr" id="subStr"><br><br>
+            Replace with String: <input type="text" name="repStr" id="repStr"><br><br>
+            <input type="radio" name="op" value = "sub"> Search substring in main string
+            <input type="radio" name="op" value = "upper"> To Upper Case
+            <input type="radio" name="op" value = "lower"> To Lower Case
+            <input type="radio" name="op" value = "trim"> Trim spaces
+            <input type="radio" name="op" value = "concat"> Concatenate
+            <input type="radio" name="op" value = "replace"> Replace
+            <br><br>
+            <input type="button" value="Submit Query" id="submit" onclick="submitQuery()">
+            <br><br>
+            <span id="result"></span>
         </form>
     </body>
 </html>
