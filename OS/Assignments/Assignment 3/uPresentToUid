@@ -1,0 +1,12 @@
+#!/bin/bash
+
+read -p "Username: " uname
+
+uid=$(cat /etc/passwd | grep -w $uname | cut -d':' -f3)
+
+if [[ -n $uid ]]
+	then
+		echo "User id of '$uname' is : $uid"
+	else
+		echo "User doesn't exist."
+fi

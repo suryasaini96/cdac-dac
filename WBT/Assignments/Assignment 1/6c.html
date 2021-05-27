@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <body>
+       <form>
+        <table border="1" cellspacing=0>
+            <tr><th>Name</th><td><input type="text" name="name"></td></tr>
+            <tr><td>Employee Code</td><td><input type="number" min="1" max="100" name="code"></td></tr>
+            <tr><td>Department</td>
+                <td><input type="radio" name="dept">ADMIN<br>
+                <input type="radio" name="dept">HR<br>
+                <input type="radio" name="dept">TECHNICAL<br>
+                <input type="radio" name="dept">ACCOUNTS</td>
+            </tr>
+            <tr><td>Date of Joining</td>
+                <td>
+                    <table border=0 cellspacing=0 cellpadding=0>
+                        <th> <input type="number" min="1" max="30" name="date" style="width:35px">/</th>
+                        <th><input type="number" min="1" max="12" name="month" style="width:40px">/</th>
+                        <th><input type="number" min="1900" max="2021" name="date" style="width:50px"></th><br>
+                        <tr><td align="center">dd</td><td align="center">mm</td><td align="center">yyyy</td></tr>
+                    </table>
+                </td>
+            </tr>
+            <tr><td>Address</td><td><textarea name="address" rows="5" cols=40 style="width:97.5%;"></textarea></td></tr>
+            <tr><td>Training programs attended</td>
+                <td>
+                    <input type="checkbox" name="training"> HTML/XHTML<br>
+                    <input type="checkbox" name="training"> JAVA<br>
+                    <input type="checkbox" name="training"> CLIENT/SERVER<br>
+                    <input type="checkbox" name="training"> .NET<br>
+                </td>
+            </tr>
+            <tr><td>Training programmes need to attend </td>
+                <td>
+                    <select size="2" name="selection" multiple>
+                        <option value="">JAVASCRIPT</option>
+                        <option value="">JSTRUTS</option>
+                        <option value="">JSP</option>
+                        <option value="">SERVLETS</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Send the information at</td>
+                <td><a href="mailto:empinfo@patni.com">empinfo@patni.com</a></td>
+            </tr>
+        </table>
+       </form> 
+        
+    </body>
+</html>

@@ -1,0 +1,45 @@
+Assignment Q1
+-------------
+Continue the script to copy file1 to dir1 and so on... till file10 to dir10.
+
+#!/bin/bash
+
+# Script to create 10 directories named as dir1-dir10 and 10 files named as file1-file10
+
+mkdir dir{1..10}
+touch file{1..10}
+
+
+Answer Q1:
+
+#!/bin/bash
+
+# Script to create 10 directories named as dir1-dir10 and 10 files named as file1-file10
+
+mkdir dir{1..10}
+touch file{1..10}
+
+for i in {1..10}
+do
+	cp file$i dir$i
+done
+
+
+Output:
+
+[surya@localhost ~]$ mkdir scripts && cd $_
+[surya@localhost scripts]$ gedit firstscript
+[surya@localhost scripts]$ chmod +x firstscript
+[surya@localhost scripts]$ ./firstscript
+[surya@localhost scripts]$ ls
+dir1   dir2  dir4  dir6  dir8  file1   file2  file4  file6  file8  firstscript
+dir10  dir3  dir5  dir7  dir9  file10  file3  file5  file7  file9
+[surya@localhost scripts]$ ls dir1
+file1
+[surya@localhost scripts]$ ls dir10
+file10 
+
+
+
+
+

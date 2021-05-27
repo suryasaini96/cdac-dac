@@ -1,0 +1,93 @@
+Name: Surya Saini
+PRN: 210540181207 
+
+Question 1: 
+-----------
+
+#!/bin/bash
+
+# Write a script where user enters a username and outputs says if that user is present on linux box or not ?
+
+read -p "Enter username: " uname
+
+var=$(cat /etc/passwd | grep -w $uname)
+
+if [[ -n $var ]] 
+	then
+		echo "User '$uname' exists on the system."
+	else
+		echo "User '$uname' does not exist on the system."
+fi
+
+Output:
+
+[surya@localhost scripts]$ ./userPresentOrNot
+Enter username: surya
+User 'surya' exists on the system.
+[surya@localhost scripts]$ ./userPresentOrNot
+Enter username: surya1
+User 'surya1' does not exist on the system.
+[surya@localhost scripts]$ 
+
+
+Question 2:
+-----------
+
+#!/bin/bash
+
+# Write a script where user enters a file path and output says if input path is a file or a directory
+
+read -p "Enter a path:" path
+
+if [[ -f $path ]]
+then
+	echo "Path is a file."
+elif [[ -d $path ]]
+then 
+	echo "Path is a directory."
+else
+	echo "Wrong path."
+fi
+
+Output:
+
+[surya@localhost scripts]$ ls -l
+total 8
+drwxr-xr-x.  2 surya surya  70 May 10 09:01 changePermOthers
+drwxr-xr-x. 12 surya surya 277 May  9 20:25 FirstScript
+-rwxrwxr-x.  1 surya surya 276 May 10 06:26 pathOrDirectory
+drwxr-xr-x.  2 surya surya  82 May  9 20:30 RemoveEmptyLines
+drwxrwxr-x.  3 surya surya  35 May  7 23:45 Test
+-rwxrwxr-x.  1 surya surya 210 May 10 07:02 uidToUname
+[surya@localhost scripts]$ ./pathOrDirectory
+Enter a path:Test
+Path is a directory.
+[surya@localhost scripts]$ ./pathOrDirectory
+Enter a path:uidToUname
+Path is a file.
+
+
+Question 3:
+-----------
+
+#!/bin/bash
+
+# Write a script where username is entered and its userid is displayed in the output
+
+read -p "Enter username: " uname
+
+# Solution 1:
+
+cat /etc/passwd | grep -w $uname | cut -d':' -f3
+
+# Solution 2:
+# cat /etc/passwd | awk -F':' -v uname="$uname" '{ if ($1 == uname) print $3}'
+
+Output:
+
+Enter username: surya
+1000
+[surya@localhost scripts]$ 
+
+
+

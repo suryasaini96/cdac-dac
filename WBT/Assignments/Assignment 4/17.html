@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script type="text/javascript">
+
+            function rectangle(l,b){
+                this.l = l;
+                this.b = b;
+                this.recDetails = recDetails;
+            }
+            function circle(r){
+                this.r = r;
+                this.cirDetails = cirDetails;
+            }
+
+            function recDetails(){
+                document.write("Rectangle area: " + this.l*this.b + "<br>");
+                document.write("Rectangle perimeter: " + 2*(this.l+this.b) + "<br>");
+            }
+            function cirDetails(){
+                document.write("Circle area: " + (Math.PI*this.r*this.r).toFixed(2) + "<br>");
+                document.write("Circle perimeter: " + (2*Math.PI*this.r).toFixed(2) + "<br>");
+            }
+            
+            rec = new rectangle(2,3);
+            cir = new circle(3);
+            rec.recDetails();
+            cir.cirDetails();
+            
+        </script>
+    </head>
+
+    <body>
+    </body>
+</html>

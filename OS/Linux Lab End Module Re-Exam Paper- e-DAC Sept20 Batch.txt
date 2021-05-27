@@ -1,0 +1,86 @@
+﻿e-DAC Linux Lab Re-Exam                                                                                                                                             [ Marks 40 ]						
+
+Instructions::-- All questions are compulsory.
+              -- Create a folder. Foldername should be your Full PRN_Full Name.
+              -- Create 2 files,under Linux, one with .txt extension   
+                 another file with .sh extension.                                               
+              -- These files will be in the folder you have created.
+              -- Save answers of Q1 and Q2 in .txt file and answers of
+                 Q3, Q4 and Q5 in .sh file. Do not copy the output.
+              -- Use command zip , to zip the folder and mail it on the given 
+                 email-id.
+              -- Your solutions should contain correct question number.
+              -- Please follow the instructions strictly.
+
+
+Q.1. Write appropriate commands for the following		 		[ Marks 10 ]
+                                                                       
+1. Print the present working directory.
+2. Copy file player.txt from directory named old to diectory named new.
+   Both directories old and new are subdirectories in your home directory.
+   Use only one command.
+3. List all files from your current directory with extension starting
+   from letter c.
+4. Delete file EmployeeData.txt.
+5. Rename file officeDetails.dat as ImpData.dat.
+6. Display all running processes in your current directory.
+7. Give proper permissions for the file named books.dat    
+    write and execute permission for Owner of the file
+    read permission for Group
+    read and execute permission for Others.
+8. Directory by name DAC2019 contains old data. Delete this directory.
+9. Create a hardlink for file named salary.dat in your current directory.
+10.Check if file by name info.dat exsists in your current directory.
+
+
+
+Q.2. Write appropriate commands for the following                   			[ Marks 10 ]
+
+1. Write a command to count number of lines in the file named
+   ImpData.
+2. Command to sort the data in reverse order.
+3. In the file containing following data 
+    apple
+    mango
+    apple
+    banana
+    orange
+    mango
+    strawberry
+    banana
+    apple
+    Print only unique lines.
+4. There are 2 files by name OldStudents and NewStudents. Write
+   a command to append contents of NewStudents under the contents
+   of OldStudents.
+5.  Display first 4 processess with maximum CPU utilization.
+
+
+
+Q.3. Write a shell script for following requirement                      			[ Marks 6 ]
+  
+    Accept a number from user and print its table.
+      
+
+
+Q.4. Write a shell script for the following                             			[ Marks 6 ]
+
+    Write a shell utility to copy top ‘x’ lines from a file                     
+    into the file by name fileCopy.txt file. Accept number of 
+    lines and filename from user.
+
+
+Q.5. Write a menu driven program to accept two numbers and choice from  		[ Marks 8 ]
+    user (like add/sub/multiply), and according to user choice
+    do the needful operation and print result. eg if numbers accepted
+    are 2 and 3. Utility should display as follows..
+
+     1.Add
+     2.Multiply
+     3.Subtract
+     Enter the choice....
+     
+     Perform actions according to the choice entered by user and print
+     the result.
+   
+    

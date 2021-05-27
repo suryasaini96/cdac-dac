@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script type="text/javascript">
+            var array = ["www.google.com", "www.msn.com", "www.amazon.co.in", 
+            "in.answers.yahoo.com", "en.m.wikipedia.com", "codehs.gitbooks.io",
+            "www.coderanch.com"];
+            var count=0;
+            array.forEach(e => {
+                if (e.slice(0,3) == "www") 
+                    count++;
+            });
+            document.write("Count: " + count);
+        </script>
+    </head>
+
+    <body>
+    </body>
+</html>

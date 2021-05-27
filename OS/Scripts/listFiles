@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# List files in sorted order (largest first) at a specified path and output it to a file
+
+path=$1
+ls -lS $path > out

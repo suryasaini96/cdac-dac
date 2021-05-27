@@ -1,0 +1,33 @@
+--------- Assignment 1 ----------
+
+1. Continue the script to copy file1 to dir1 and so on... till file10 to dir10.
+
+
+--------- Assignment 2 ----------
+
+1. What does each location in / contains?
+2. How to set umask as temp & permanent?
+3. Create a user 'user1' 
+Login as that user and create two directories 'dir1' and 'dir2'
+Create 100 files in dir1 and 100 files in dir2
+Copy all files of dir1 to dir2
+Move all files of dir2 to dir1
+
+Result: Your dir2 should be empty now
+
+- What is the permission of the directory right now?
+- add 2 files in the directory - what is the permission of these two files? Is it same as that of dir2
+- Run the command chmod -R 777 dir2
+- Create two new files named 'testfile1' & 'testfile2' and observe the  permission of these two files? Is it same as that of dir2
+
+
+---------- Assignment 3 ---------
+
+1. Write a script where user enters a username and outputs says if that user is present on linux box or not?
+2. Write a script where user enters a file path and output says if input path is a file or a directory.
+3. Write a script where username is entered and its userid is displayed in the output
+
+
+---------- Assignment 4 ---------
+
+1. Find the world writable files on your Linux system and then make them world readable.

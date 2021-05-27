@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Ask user a question and reply as needed
+
+read -p "Is it Sunday ?: " ans
+
+if [ $ans = "yes" ]
+	then
+		echo "Happy Holiday!"
+	elif [ $ans = "no" ]
+	then
+		echo "Go back to work!"
+	else
+		echo "Wrong input"
+fi
+ 

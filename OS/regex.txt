@@ -1,0 +1,131 @@
+sid@sid-laptop:~$ cat names.txt | grep "sid"
+sidddd
+sidd
+sid
+sid@sid-laptop:~$ cat names.txt | grep "^s"
+shobhit
+sidddd
+sidd
+sid
+si
+sid@sid-laptop:~$ cat names.txt | grep "^si"
+sidddd
+sidd
+sid
+si
+sid@sid-laptop:~$ cat names.txt | grep "^sid"
+sidddd
+sidd
+sid
+sid@sid-laptop:~$ cat names.txt | grep "^s.d"
+sidddd
+sidd
+sid
+sid@sid-laptop:~$ cat names.txt | grep "^p
+> ^C
+^Xsid@sid-laptop:~$ cat names.txt | grep "^p"
+sid@sid-laptop:~$ cat names.txt | grep -i "^p"
+Prachi
+Prxnita
+Pr6nita
+Pr6757chi
+PrGnita
+sid@sid-laptop:~$ cat names.txt | grep -i "^pr.n"
+Prxnita
+Pr6nita
+PrGnita
+sid@sid-laptop:~$ cat names.txt | grep -i "^si"
+sidddd
+sidd
+sid
+si
+sid@sid-laptop:~$ cat names.txt | grep -i "^sid+"
+sid@sid-laptop:~$ cat names.txt | grep -i "^sid\+"
+sidddd
+sidd
+sid
+sid@sid-laptop:~$ cat names.txt | grep -i "^sid*"
+sidddd
+sidd
+sid
+si
+sid@sid-laptop:~$ cat names.txt | grep -i "^sid\{2\}"
+sidddd
+sidd
+sid@sid-laptop:~$ cat names.txt | grep -i "^si.*"
+sidddd
+sidd
+sid
+si
+sid@sid-laptop:~$ cat names.txt | grep -i "^si.+"
+sid@sid-laptop:~$ cat names.txt | grep -i "^si.\+"
+sidddd
+sidd
+sid
+sid@sid-laptop:~$ cat names.txt | grep -i "^p.\+"
+Prachi
+Prxnita
+Pr6nita
+Pr6757chi
+PrGnita
+sid@sid-laptop:~$ cat names.txt | grep -i "^pr.\+"
+Prachi
+Prxnita
+Pr6nita
+Pr6757chi
+PrGnita
+sid@sid-laptop:~$ cat names.txt | grep -i "^pr.\+a$"
+Prxnita
+Pr6nita
+PrGnita
+sid@sid-laptop:~$ cat names.txt | grep -i "^pr[0-9].\+a$"
+Pr6nita
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[2-9j-z-].\+a$"
+Prxnita
+Pr6nita
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[2-9j-z].\+a$"
+Prxnita
+Pr6nita
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[2-9j-zA-J].\+a$"
+Prxnita
+Pr6nita
+PrGnita
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[2-9].\+a$"
+Pr6nita
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[2-9]*.\+a$"
+Prxnita
+Pr6nita
+PrGnita
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[2-9]\+.\+a$"
+Pr6nita
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[2-9]\{2\}.\+a$"
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[2-9]\{2\}.\+"
+Pr6757chi
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[2-9]\{2,4\}.\+"
+Pr6757chi
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[2-9]\{2,3\}.\+"
+Pr6757chi
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[2-9]\{5,6\}.\+"
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[2-9]\{2,4\}.\+"
+Pr6757chi
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[x|a]\{2,4\}.\+"
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[x|a].\+"
+Prachi
+Prxnita
+sid@sid-laptop:~$ cat names.txt | grep  "^Pr[x|6].\+"
+Prxnita
+Pr6nita
+Pr6757chi
+sid@sid-laptop:~$ cat names.txt | grep  "
+sid@sid-laptop:~$ cat names.txt | grep  "[0-9]\{2\}"
+Pr6757chi
+sid@sid-laptop:~$ cat names.txt | grep  "[0-9]\{2\}"
+Pr6757chi
+sid@sid-laptop:~$ cat names.txt | grep  "[0-9]\{10\}"
+sid@sid-laptop:~$ cat names.txt | grep  "\d\{10\}"
+sid@sid-laptop:~$ cat names.txt | grep  "\d\{2\}"
+sidddd
+sidd
+sid@sid-laptop:~$ cat names.txt | grep -P  "\d{2}"
+Pr6757chi
+

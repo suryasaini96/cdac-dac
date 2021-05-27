@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Write a shell script that asks for user input. On the basis of that input
+# 1. Print the IP of the system (hostname command)
+# 2. Print the current user (use env. variable)
+# 3. Print all the active tasks with top command
+# 4. Start xlogo program, push it into background with bg. Wait for 10 seconds (find  out how you wait in shell script) and then kill the xlogo program with 'kill' command
+# 5. Quit
+
+read -p "Enter input: " input
+
+if [ $input = "y" ] 
+	then
+		hostname -i | cut -d' ' -f2
+		echo $USER
+		top -n 1
+		firefox &
+		# bg %1
+		#sleep 10
+	else
+		"Wrong input.Exiting..."
+fi
+		
+		
+
+  
+

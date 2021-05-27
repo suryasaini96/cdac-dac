@@ -1,0 +1,11 @@
+#!/bin/bash
+
+mkdir testdir && cd $_
+mkdir dir{1..100}
+
+for i in {1..100}
+do
+	echo "This is file$i" > dir$i/file$i
+done
+
+

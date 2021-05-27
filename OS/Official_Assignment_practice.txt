@@ -1,0 +1,68 @@
+Write a command that fetches the list of all world writable files under /root directory
+Write a command that fetches the list of all files under /root directory that are more than 2KB in size
+Create a script that asks for a user name and add that user with password same as that of user name. The user added should be assigned nologin shell
+Create a calculator program in bash that takes two numbers (integers) and display menu to the user for various mathematical operations. Hint: Switch Case Break
+Create 2 VMs - both CentOS 7 (with fresh snapshots) with names - machineA and machineB
+	1. From machineA copy any file to machineB
+	2. From machineA - create a dir named 'testdir' on machineB
+	3. From machineA - run forkbomb -   :(){ :|: & };:   - on machineB
+Run the following two programs -> analyse & explain the output:
+First
+-----
+#include<stdio.h> 
+#include<unistd.h> 
+#include<sys/wait.h> 
+#include<sys/types.h> 
+
+int main() 
+{ 
+	int i; 
+	int pid = fork(); 
+
+	if (pid == 0) 
+	{ 
+		for (i=0; i<20; i++) 
+			printf("I am Child\n"); 
+	} 
+	else
+	{ 
+		printf("I am Parent\n"); 
+		while(1); 
+	} 
+} 
+
+Second
+------
+#include<stdio.h> 
+#include<unistd.h> 
+#include<sys/wait.h> 
+#include<sys/types.h> 
+
+int main() 
+{ 
+	int i; 
+	int pid = fork(); 
+	if (pid==0) 
+	{ 
+		for (i=0; i<20; i++) 
+			printf("I am Child\n"); 
+	} 
+	else
+	{ 
+		wait(NULL); 
+		printf("I am Parent\n"); 
+		while(1); 
+	} 
+} 
+
+Create a script that depicts sending the process to background so that the next command in sequence can run without wait
+Create a script that displays the system information like: OS name, kernel version, RAM, etc..
+Create a shell script to find the largest among the 3 given numbers
+Create a shell program to check whether a given string is palindrome
+Create a shell program to count number of words, characters, white spaces and special symbols in a given text
+Create a script to remove all empty lines from a file
+Create a script that fetches only the IP address of the machine from output of ifconfig command
+Create a script that asks for repo name and creates a repository on github with that name
+
+
+

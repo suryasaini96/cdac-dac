@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table tr td:nth-child(1) {
+	            text-align: right;
+            }
+        </style>
+    </head>
+    <body bgcolor="steelblue" text="white">
+        <div style="width:40%; margin: 0 auto;">
+            <h2 align="center">Step 2 of registration</h2> 
+            <form action="" method="POST">
+                <fieldset><legend>Registration Details</legend>
+                    <table align="center">
+                        <tr>
+                            <td>University: </td>
+                            <td><input type="text" name="uni"></td></tr>
+                        <tr><tr></tr><tr></tr><tr></tr></tr>
+                        <tr>
+                            <td>Institute: </td>
+                            <td><input type="text" name="ins"></td></tr>
+                        <tr><tr></tr><tr></tr><tr></tr></tr>
+                            <td>Branch: </td>
+                            <td><select name="branch">
+                                <option disabled selected value> -- select -- </option>
+                                <option name="CSE">Computer Science</option>
+                                <option name="ECE">Electronics</option>
+                                <option name="ME">Mechanical</option>
+                                <option name="CE">Civil</option>
+                            </select></td></tr>
+                        <tr><tr></tr><tr></tr><tr></tr></tr>
+                            <td>Degree: </td>
+                            <td> <select name="degree">
+                                <option disabled selected value> -- select -- </option>
+                                <option value="">B.Tech</option>
+                                <option value="">M.Tech</option>
+                                <option value="">BS</option>
+                                <option value="">MS</option>
+                            </select>
+                            <input type="radio" name="status"> Pursuing <input type="radio" name="status"> Completed </td> 
+                        </tr>
+                        <tr><tr></tr><tr></tr><tr></tr></tr>
+                            <td>Average CPI: </td>
+                            <td><input type="number" step="0.1" min="0" max="5" name="cpi"> Upto&nbsp;<input type="number" min=1 max=8 name="sem">th Semester</td></tr>
+                        <tr><tr></tr><tr></tr><tr></tr></tr>
+                            <td>Experience: </td>
+                            <td><input type="number" name="exp" min=0 max=50> Years</td></tr>
+                        <tr><tr></tr><tr></tr><tr></tr></tr>
+                            <td>Your Website or Blog: </td>
+                            <td><input type="text" name="site" value="https://"></td></tr>
+                        <tr><tr></tr><tr></tr><tr></tr></tr>
+                    </table>
+                </fieldset>
+            </form>
+            <div style="margin-left: 40%; display: inline-block;">
+                <input type="submit" value="Previous" name="page"> 
+                Step 2
+                <input type="submit" value="Next" name="page">
+            </div>
+        </div>    
+        
+    </body>
+</html>

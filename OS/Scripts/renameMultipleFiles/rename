@@ -1,0 +1,30 @@
+#!/bin/bash
+
+echo "Total files:"
+ls | grep -v 'rename'| wc -l
+
+echo "Count of pdf & docx files:"
+ls | grep -E '.*\.(pdf|docx)' | wc -l
+
+for file in *.pdf
+	do
+		mv $file $(ls | grep $file | sed 's/.pdf/.docx/g')
+done
+
+echo "pdf files renamed to docx"
+
+echo "Count of pdf & docx files now:"
+ls | grep -E '.*\.(pdf|docx)' | wc -l
+
+
+echo "Files with _ in their name:"
+ls | grep _
+
+
+
+
+		
+
+
+
+ 

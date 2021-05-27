@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Search string in a file path
+
+path=$1 #path
+str=$2 #search
+
+var=$(grep $str $path)
+
+if [[ -n $var ]]
+then	
+	echo "String exists."
+else
+	echo "No"
+fi
+
+
+
+
+

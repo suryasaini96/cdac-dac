@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Write a script where user enters a file path and output says if input path is a file or a directroy
+
+read -p "Enter a path:" path
+
+if [[ -f $path ]]
+then
+	echo "Path is a file."
+elif [[ -d $path ]]
+then 
+	echo "Path is a directory."
+else
+	echo "Wrong path."
+fi
+
+# var=$(find $path -maxdepth 0 -type f)
+
+# if [[ -n $var ]]
+#	then
+#		echo "Path is a file."
+#	else
+#		echo "Path is a directory."
+# fi
+
+
+
+

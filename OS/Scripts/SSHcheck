@@ -1,0 +1,6 @@
+sudo systemctl status ssh
+
+
+scp hostname@ip:<source> <destination>
+
+eg: scp surya@192.168.186.33:/home/scripts .

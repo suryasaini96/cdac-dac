@@ -1,0 +1,45 @@
+Name: Surya Saini
+PRN: 210540181207 
+
+#!/bin/bash
+
+# Find the world writable files on your Linux system and then make them world readable.
+
+# Solution 1:
+
+find . -perm /o+w -type f -exec chmod o-w+r {} \;
+echo "Write permissions of others changed."
+
+# Solution 2: 
+# Working:
+# Find all the files in current directory onwards which have write permissions for others. Used awk command to go line by line in the output. Used the line output from awk into chmod to change permission. xargs is needed because chmod doesn't accept input from standard input.
+# find . -perm /o+w -type f | awk '{print $0}' | xargs chmod o-w+r
+
+
+Output:
+
+[surya@localhost changePermOthers]$ ls -l
+total 12
+-rwxrw-r--. 1 surya surya 596 May 10 09:01 changePermissionsOthers
+-rw-rw-rw-. 1 surya surya   5 May 10 07:47 testFile
+-rw-rw-rw-. 1 surya surya   6 May 10 07:47 testFile1
+[surya@localhost changePermOthers]$ ./changePermissionsOthers
+Write permissions of others changed.
+[surya@localhost changePermOthers]$ ls -l
+total 12
+-rwxrw-r--. 1 surya surya 596 May 10 09:01 changePermissionsOthers
+-rw-rw-r--. 1 surya surya   5 May 10 07:47 testFile
+-rw-rw-r--. 1 surya surya   6 May 10 07:47 testFile1
+[surya@localhost changePermOthers]$ 
+
+
+
+
+
+
+
+
+
+
+
+
