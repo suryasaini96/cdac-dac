@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script type="text/javascript">
+        window.onload = function(){
+            var names = ["John","Steve","Ben","Damon","Ian"];
+            var list = document.getElementById("list");
+            for (var name of names) {
+                var entry = document.createElement("li");
+                entry.appendChild(document.createTextNode(name));
+                document.getElementById("list").appendChild(entry);
+            }
+        };
+        </script>
+    </head>
+
+    <body>
+        <h3>Members of my Group are</h3>
+        <ol id="list">
+        </ol>
+    </body>
+</html>

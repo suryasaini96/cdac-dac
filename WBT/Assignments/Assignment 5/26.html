@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script type="text/javascript">
+            function sumOfDigits(){
+                var num = parseInt(document.getElementById("num").value);
+                var sum = 0;
+                if (num<0 || num>999)
+                    document.getElementById("result").innerHTML = "Entered number is out of range."
+                else if (isNaN(num))document.getElementById("result").innerHTML = "Please enter a valid number.";    
+                else {
+                    var temp = num;
+                    while (temp!=0){
+                        sum+=temp%10;
+                        temp=parseInt(temp/10);
+                    }
+                    document.getElementById("result").innerHTML = "Sum of digits of " + num + " is " + sum;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <form action="">
+            Enter a +ve number less than 1000:  <input type="text" size="5" name="num" id="num"><br>
+            <span id="result"></span><br>
+            <input type="button" value="Calculate" onclick="sumOfDigits()">
+        </form>
+    </body>
+</html>

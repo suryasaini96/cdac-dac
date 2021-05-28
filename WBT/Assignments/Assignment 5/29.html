@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            form{
+                width: 20%;
+            }
+            input:not(#compute){
+                float: right;
+            }
+            #compute{
+                margin-right: 10px;
+            }
+            h3{
+                display: inline-block;
+            }
+        </style>
+        <script type="text/javascript">
+            // emi = [p*r*(1+r)^n]/[(1+r)^n -1]
+            // p = principal , r=monthly rate , n = no. of months
+            function calculate(){
+                var p = parseFloat(document.getElementById("amt").value);
+                var r = parseFloat(document.getElementById("rate").value)/1200;
+                var n = parseFloat(document.getElementById("years").value)*12;
+                if (isNaN(p) || isNaN(r) || isNaN(n)) alert("Please enter valid information.");
+                else {
+                    var emi = (p*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
+                    var total = emi*n;
+                    var interest = total - p;
+                    document.getElementById("monthly").value = Math.round(emi);
+                    document.getElementById("total").value = Math.round(total);
+                    document.getElementById("interest").value = Math.round(interest);
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <form action="">
+            <h3>Enter Loan Information:</h3><br>
+            1) Amount of the loan (any currency): <input type="text" name="amt" size="10px" id="amt" autofocus><br><br>
+            2) Annual percentage rate of interest: <input type="text" name="rate" size="10px" id="rate"><br><br>
+            3) Repayment period in years: <input type="text" name="years" size="10px" id="years"><br><br>
+            <input type="button" name="compute" id="compute" value="Compute" onclick="calculate()"><h3> Payment Information:</h3><br>
+            4) Your monthly payment will be: <input type="text" name="monthly" size="10px" id="monthly" readonly><br><br>
+            5) Your total payment will be: <input type="text" name="total" size="10px" id="total" readonly><br><br>
+            6) Your total interest payment will be: <input type="text" name="interest" size="10px" id="interest" readonly><br><br>
+        </form>    
+    </body>
+</html>
