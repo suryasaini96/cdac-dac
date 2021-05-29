@@ -11,8 +11,6 @@
         
         <script type="text/javascript">
 
-        window.open();
-
             function validate(){
                 clearSpans();
                 var oid = document.getElementById("oid");
@@ -55,13 +53,26 @@
                     return focusOn(total);
                 }
 
-                return Order = {
-                    oid : oid.value,
-                    name : name.value,
-                    bdate : bdate.value,
-                    sdate : sdate.value,
-                    total : total.value
+                Order = {
+                    "oid" : oid.value,
+                    "name" : name.value,
+                    "bdate" : bdate.value,
+                    "sdate" : sdate.value,
+                    "total" : total.value
                 };
+
+                var format =  "<table cellspacing=0 cellpadding=1 border=1>" + 
+                    "<tr><td>Order ID:</td><td>oid</td></tr>" + 
+                    "<tr><td>Customer Name:</td><td>name</td></tr>"+
+                    "<tr><td>Billing date:</td><td>bdate</td></tr>"+
+                    "<tr><td>Shipping date:</td><td>sdate</td></tr>"+
+                    "<tr><td>Order Total:</td><td>total</td></tr>"+
+                    "</table>";
+                var orderTable = format.replace("oid", Order.oid).replace("name", Order.name).replace("bdate", Order.bdate).replace("sdate", Order.sdate).replace("total", Order.total);
+
+                myWindow = window.open("","Order details", "toolbar=no,scrollbars=no,resizable=no,width=400,height=400");
+                myWindow.document.write(orderTable);
+                return true;
 
                 /* Helper functions */
 

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            table {
+                border-spacing: 12px;
+            }
+            table tr td:nth-child(3){
+                color: red;
+            }
+        </style>
+        <script type="text/javascript">
+            window.onload = function() {   
+                var month = document.getElementById("month");
+                var date = document.getElementById("date");
+                var year = document.getElementById("year");
+                var months = ["January","Febuary","March","April","May","June","July","August","September","October","November","December"];
+                var today = new Date();
+
+                for (var i=0; i<months.length; i++){
+                    var option = document.createElement("option");
+                    option.appendChild(document.createTextNode(months[i]));
+                    option.value = months[i];
+                    month.appendChild(option);
+                }
+
+                for (var i=1; i<=31; i++){
+                    var option = document.createElement("option");
+                    option.appendChild(document.createTextNode(i));
+                    option.value = i;
+                    date.appendChild(option);
+                }
+
+                for (var i=today.getFullYear(); i>=1900; i--){
+                    var option = document.createElement("option");
+                    option.appendChild(document.createTextNode(i));
+                    option.value = i;
+                    year.appendChild(option);
+                }
+            }
+
+            function display(){
+                clearSpans();
+                var name = document.getElementById("name");
+                var month = document.getElementById("month");
+                var date = document.getElementById("date");
+                var year = document.getElementById("year");
+                var email = document.getElementById("email");
+                var gender = document.getElementsByName("gender");
+                var lucky = document.getElementById("lucky");
+                var foods = document.getElementsByName("foods");
+                var g,f="";
+
+                if (!checkName(name)) { 
+                    document.getElementById("errorName").innerHTML = "Please enter a valid name between 3 and 30 characters";
+                    return focusOn(name);
+                }
+
+                if (!checkBDate(date,month,year)) { 
+                    document.getElementById("errorBDate").innerHTML = "Please enter a valid birth date";
+                    return focusOn(month);
+                }
+
+                if (!checkEmail(email)) { 
+                    document.getElementById("errorEmail").innerHTML = "Please enter a valid email";
+                    return focusOn(email);
+                }
+
+                if (!checkGender(gender)) { 
+                    document.getElementById("errorGender").innerHTML = "Please select a gender";
+                    return focusOn(document.getElementById("male"));
+                }
+
+                if(isNaN(Number(lucky.value)) || Number(lucky.value)<=0 || Number(lucky.value)>100){
+                    document.getElementById("errorLucky").innerHTML = "Invalid lucky number";
+                    return focusOn(lucky);
+                }
+
+                if (!checkFoods(foods)) { 
+                    document.getElementById("errorFoods").innerHTML = "Please select at least one food";
+                    return focusOn(document.getElementById("pizza"));
+                }
+
+                document.getElementById("info").innerHTML = "<u>You entered:</u> <br>" +
+                                                "Name: " + name.value + "<br>" +
+                                                "Birth Date: " + month.value.slice(0,3) + "/" + date.value + "/" + year.value + "<br>" + 
+                                                "Email Address: " + email.value + "<br>" +
+                                                "Gender: " + g + "<br>" +
+                                                "Lucky Number: " + lucky.value + "<br>" +
+                                                "Favorite Food: " + f + "<br>";
+
+                /* Helper functions */
+
+                function checkName(name){
+                    var namePattern = /^[a-zA-Z ]{3,30}$/;
+                    if(!namePattern.test(name.value)) return false;
+                    else return true;
+                }
+
+                function checkBDate(date,month,year) {
+
+                    return isValidDate(dateObject(date,month,year));
+
+                    function dateObject(date,month,year){
+                        var months = ["January","Febuary","March","April","May","June","July","August","September","October","November","December"];
+                        var d = parseInt(date.value);
+                        var m = months.indexOf(month.value);
+                        var y = parseInt(year.value);
+                        return new Date(y,m,d);
+                    }
+
+                    function isValidDate(d) { // Check if date is a Date object and is a valid date by converting to a number in millis.
+                        return d instanceof Date && !isNaN(d);  // d should be an object of type Date and should be a number (date can be denoted by number in millis)           
+                    }
+                }
+
+                function checkEmail(email){
+                    var emailPattern = /^\w+@\w+\.com$/;
+                    if(!emailPattern.test(email.value)) return false;
+                    else return true;
+                }
+
+                function checkGender(gender){
+                    for (var i=0; i<gender.length; i++){
+                        if (gender[i].checked == true){
+                            g = gender[i].value;
+                            return true;
+                        }    
+                    }
+                    return false;
+                }
+
+                function checkFoods(foods){
+                    for (var i=0; i<foods.length; i++){
+                        if (foods[i].checked == true)
+                            f+= foods[i].value + " ";   
+                    }
+                    if (f == "") return false;
+                    return true;
+                }
+
+                function clearSpans(){
+                    document.getElementById("errorName").innerHTML = "";
+                    document.getElementById("errorBDate").innerHTML = "";
+                    document.getElementById("errorEmail").innerHTML = "";
+                    document.getElementById("errorGender").innerHTML = "";  
+                    document.getElementById("errorLucky").innerHTML = "";
+                    document.getElementById("errorFoods").innerHTML = "";
+                }
+
+                function focusOn(element){
+                    element.focus();
+                    return false;     
+                }
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <form action="">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" id="name"></td>
+                    <td id="errorName"></td>
+                </tr>
+                <tr><td>Birth Date:</td>
+                    <td><select name="month" id="month"></select>
+                    <select name="date" id="date"></select>
+                    <select name="year" id="year"></select></td>
+                    <td id="errorBDate"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" id="email"><br></td>
+                    <td id="errorEmail">(Use format: name@company.com)</td>
+                </tr>
+                <tr>
+                   <td>Gender:</td>
+                   <td>
+                       <input type="radio" name="gender" value="Male" id="male"> Male <br>
+                       <input type="radio" name="gender" value="Female"> Female <br>
+                   </td>
+                   <td id="errorGender"></td>
+                </tr>
+                <tr>
+                    <td>Lucky number:</td>
+                    <td><input type="text" id="lucky"></td>
+                    <td id="errorLucky">(A number between 1 and 100)</td>
+                </tr>
+                <tr>
+                    <td>Favorite Foods</td>
+                    <td>
+                        <input type="checkbox" name="foods" value="Pizza" id="pizza"> Pizza <br>
+                        <input type="checkbox" name="foods" value="Pasta"> Pasta <br>
+                        <input type="checkbox" name="foods" value="Chinese"> Chinese <br>
+                    </td>
+                    <td id="errorFoods"></td>
+                </tr>
+            </table>
+
+            <input type="button" value="Send Data" onclick="return display()"><br><br>
+            <span id="info"></span>
+
+        </form>
+    </body>
+</html>
