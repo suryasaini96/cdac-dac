@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("div").css({'background-color': 'lightblue',
+                'height': '80px',
+                'width': '160px',
+                'border': '1px solid blue'});
+
+                $("span").css({'background-color': 'orange',
+                'color': 'white',
+                'border': '1px solid blue',
+                'margin-left': '10px'}).click(function(){
+                    $(this).css("font-family", "Calibri")
+                }); 
+            });   
+        </script>
+        
+    </head>
+
+    <body>
+        <div id="target">
+            div#target <br><br>
+            <span>Span(change me!)</span>
+        </div>
+    </body>
+</html>

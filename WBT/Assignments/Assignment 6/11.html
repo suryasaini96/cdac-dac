@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("div").each(function(i){
+                    if ($(this).hasClass("divclass"))
+                        document.write($(this).attr('id'));
+                })
+            });  
+        </script>
+    </head>
+
+    <body>
+        <div id="div1" class="divclass"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </body>
+</html>

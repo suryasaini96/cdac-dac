@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            input{margin: 0px 5px 5px 0px;}
+            table{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            td{
+                border: 1px solid black;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var arr = [];
+                $("#add").click(function(){
+                    var jsonObj = {
+                        'name' : $("#name").val(),
+                        'age' : $("#age").val(),
+                        'employed' : $("#employed").val()
+                    }
+                    arr.push(jsonObj);
+                });
+
+                $("#display").click(function(){
+                    $.each(arr, function(i, obj){
+                        $("#table").append("<tr>" + "<td>"+obj.name+"</td>"+"<td>"+obj.age+"</td>"+"<td>"+obj.employed+"</td>" + "</tr>");
+                    })
+                })
+            });  
+        </script>
+    </head>
+
+    <body>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" size="15"><br>
+            <label for="age">Age:</label>
+            <input type="text" name="age" id="age" size="15"><br>
+            <label for="employed">Employed:</label>
+            <input type="text" name="employed" id="employed" size="15"><br>
+            <input type="button" value="Add" id="add">
+            <input type="button" value="Display" id="display"><br><br>
+            <table id="table">
+            </table>
+        </form>
+    </body>
+</html>

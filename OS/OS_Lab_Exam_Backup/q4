@@ -1,0 +1,33 @@
+#!/bin/bash
+
+add(){
+	echo "Addition: $(( $1 + $2 ))"	
+}
+
+sub(){
+	echo "Subtraction: $(( $1 - $2 ))"
+}
+
+div(){
+	echo "Division: $(( $1 / $2 ))"
+}
+
+mul(){
+	echo "Multiplication: $(( $1 * $2 ))"
+}
+
+read -p "Number 1: " num1
+read -p "Number 2: " num2
+
+add $num1 $num2
+sub $num1 $num2
+div $num1 $num2
+mul $num1 $num2
+
+
+# I simply used 4 functions and displayed all the outputs at once. I am not sure if you wanted an 
+# extra menu driven approach. To keep things simple I only used this approach.
+# This can also be made as passing arguments to the script directly for much better use.
+
+
+

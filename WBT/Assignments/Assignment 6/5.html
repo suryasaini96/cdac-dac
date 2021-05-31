@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            div.container{
+                border: 1px solid blue;
+                width: max-content;
+
+            }
+            div div {
+                background-color: lightpink;
+                height: 40px;
+                width: 150px;
+                margin: 2px 2px 10px 2px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                 $("#div2").css("background-color", "yellow");
+            });   
+        </script>
+        
+    </head>
+
+    <body>
+        <div class="container">
+            <div id="div1">div.target</div>
+            <div id="div2">div.target</div>
+            <div id="div3">div.target</div>
+        </div>
+    </body>
+</html>
