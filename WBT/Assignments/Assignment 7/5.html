@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#test").click(function(){
+                    $("table tr:odd").css({
+                        'background-color' : 'lightskyblue'
+                    });
+                    $("table tr:even:not(:first)").css({
+                        'background-color' : 'yellow'
+                    });
+                })
+            });      
+        </script>
+    </head>
+
+    <body>
+        <table>
+            <th>Employee Name</th><th>Department</th><th>Salary</th>
+            <tr>
+                <td>Jane Smith</td>
+                <td>Marketing</td>
+                <td>$95,000</td>
+            </tr>
+            <tr>
+                <td>John Smith</td>
+                <td>Technology</td>
+                <td>$90,000</td>
+            </tr>
+            <tr>
+                <td>Brian Adam</td>
+                <td>Sales</td>
+                <td>$72,000</td>
+            </tr>
+            <tr>
+                <td>Mary Jones</td>
+                <td>Support</td>
+                <td>$60,000</td>
+            </tr>
+            <tr>
+                <td>Michael Jefferson</td>
+                <td>Technology</td>
+                <td>$85,000</td>
+            </tr>
+        </table>
+        <input type="button" value="Test It" id="test">
+
+    </body>
+</html>

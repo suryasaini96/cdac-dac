@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#test").click(function(){
+                   $("thead, tfoot").css("background-color","lightgrey");
+                })
+            });      
+        </script>
+    </head>
+
+    <body>
+        <table>
+            <thead>
+                <th>Employee Name</th><th>Department</th><th>Salary</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>Marketing</td>
+                    <td>$95,000</td>
+                </tr>
+                <tr>
+                    <td>John Smith</td>
+                    <td>Technology</td>
+                    <td>$90,000</td>
+                </tr>
+                <tr>
+                    <td>Brian Adam</td>
+                    <td>Sales</td>
+                    <td>$72,000</td>
+                </tr>
+                <tr>
+                    <td>Mary Jones</td>
+                    <td>Support</td>
+                    <td>$60,000</td>
+                </tr>
+                <tr>
+                    <td>Michael Jefferson</td>
+                    <td>Technology</td>
+                    <td>$85,000</td>
+                </tr>  
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Total Salary</td>
+                    <td>$373,000</td>
+                </tr>
+            </tfoot>
+        </table><br>
+        <input type="button" value="Test It" id="test">
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            ul{
+                width: max-content;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#first").click(function(){
+                    $("li").css("background-color", "");
+                    $("li:nth-of-type(1)").css("background-color", "yellow");
+                })
+
+                $("#third").click(function(){
+                    $("li").css("background-color", "");
+                    $("li:nth-of-type(3)").css("background-color", "yellow");
+                })
+            });      
+        </script>
+    </head>
+
+    <body>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+
+        <ul>
+            <li>Item A</li>
+            <li>Item B</li>
+            <li>Item C</li>
+            <li>Item D</li>
+        </ul>
+        <input type="button" value="1st Child" id="first"><br><br>
+        <input type="button" value="3rd Child" id="third">
+    </body>
+</html>

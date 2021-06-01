@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#btnTestIt").click(function(){
+                    $("ul").css({
+                        'border' : '2px dotted red',
+                        'background-color':'yellow',
+                        'width':'150px'
+                    })
+                })
+            });      
+        </script>
+    </head>
+
+    <body>
+        <h3>Departments:</h3>
+        <ul>
+            <li>Marketing</li>
+            <li>Sales</li>
+            <li>Technology</li>
+            <li>Customer Support</li>
+        </ul>
+        <input type="button" value="Test It" id="btnTestIt">
+    </body>
+</html>

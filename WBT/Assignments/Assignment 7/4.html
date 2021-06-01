@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            ul{
+                width: max-content;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                // To dynamically populate select dropdown from HTML li items on document load
+                $.each($("li"), function(){
+                    $("#listDept").append($("<option/>").text($(this).text()));
+                })
+                
+                $("#add").click(function(){
+                    var newDept = $("#dept").val();
+                    if (newDept != ""){
+                        $("ul").append($("<li/>").text(newDept));
+                        $("#listDept").append($("<option/>").text(newDept));   
+                    }  
+                })
+
+                $("#selectBtn").click(function(){
+                    var selected = $("select[name='listDept'] option:selected").val();
+                    $.each($("li"), function(){
+                        if ($(this).text() == selected){
+                            $(this).css("background-color", "yellow");
+                        } else {
+                            $(this).css("background-color", "");
+                        }
+                    })
+                })
+            });      
+        </script>
+    </head>
+
+    <body>
+        <h3>Departments:</h3>
+        <ul>
+            <li>Marketing</li>
+            <li>Sales</li>
+            <li>Technology</li>
+            <li>Customer Support</li>
+        </ul>
+        <input type="button" value="Add" id="add"> <input type="text" value="" id="dept"> <br><br>
+        <input type="button" value="Select" id="selectBtn"> <select name="listDept" id="listDept"></select>
+    </body>
+</html>

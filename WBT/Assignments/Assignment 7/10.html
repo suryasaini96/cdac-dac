@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            span:not(#displayArea){
+                color: red;
+                margin: 5px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#display").click(function(){
+                    var Order = validate();
+                    if (Order != false){
+                        $("#displayArea").empty();
+
+                        $("#displayArea").append(
+                            "<br>Order id: " + Order.oid + "<br>" +
+                            "Cust name: " + Order.name + "<br>" + 
+                            "Billing date: " + Order.bdate + "<br>" +
+                            "Shipping date: " + Order.sdate + "<br>" +
+                            "Order total: " + "$" + Order.total + "<br>"
+                        )
+                    }
+                })
+            })
+            function validate(){
+                clearSpans();
+                var oid = document.getElementById("oid");
+                var name = document.getElementById("name");
+                var bdate = document.getElementById("bdate");
+                var sdate = document.getElementById("sdate");
+                var total = document.getElementById("total");
+                var pattern = /^\d{1,2}\-\d{1,2}\-\d{4}$/;
+
+                if(isNaN(Number(oid.value)) || Number(oid.value)<=0 ){
+                    document.getElementById("errorOid").innerHTML = "Order ID should be a number";
+                    return focusOn(oid);
+                }
+
+                if (name.value.length<6) {
+                    document.getElementById("errorName").innerHTML = "Cust name cannot be <6 characters";
+                    return focusOn(name);  
+                }
+
+                if (!checkDate(bdate.value)) { // If billing date is invalid
+                    document.getElementById("errorBDate").innerHTML = "Please enter a valid billing date in dd-mm-yyyy";
+                    return focusOn(bdate);
+                } else { // if billing date is valid check if it's less than today
+                    var d1 = dateObject(bdate.value);
+                    var today = new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()); // Today without timestamp
+                    if (d1<today) {document.getElementById("errorBDate").innerHTML = "Billing date cannot be less than today"; return focusOn(bdate);}
+                }
+
+                if (!checkDate(sdate.value)) { // If shipping date is invalid
+                    document.getElementById("errorSDate").innerHTML = "Please enter a valid shipping date in dd-mm-yyyy";
+                    return focusOn(sdate);
+                } else { // If shipping date is valid check if it's not less than billing date
+                    var d1 = dateObject(bdate.value);
+                    var d2  = dateObject(sdate.value);
+                    if (d2<d1) {document.getElementById("errorSDate").innerHTML = "Shipping date cannot be less than billing date"; return focusOn(sdate);}
+                }
+
+                if ((isNaN(Number(total.value)) || Number(total.value)<=0)) {
+                    document.getElementById("errorTotal").innerHTML = "Order total should be a number";
+                    return focusOn(total);
+                }
+
+                Order = {
+                    "oid" : oid.value,
+                    "name" : name.value,
+                    "bdate" : bdate.value,
+                    "sdate" : sdate.value,
+                    "total" : total.value
+                };
+                return Order;
+
+                /* Helper functions */
+
+                function checkDate(stringDate){ // Check if a date is valid. Wrapper for matching pattern and if date is valid.
+                    if(!pattern.test(stringDate)) return false;
+                    else {
+                        var d = dateObject(stringDate); // Make a Date object of string date
+                        if(!isValidDate(d)){ // Check if Date object is a valid date
+                            return false;
+                        } else return true;
+                    }
+                }
+
+                function dateObject(str){ // Returns a Date object from date string in dd-mm-yyyy format
+                    var dateArray = str.split("-");
+                    return new Date(dateArray[2],dateArray[1]-1,dateArray[0]); // Date was entered in dd-mm-yyyy format but Date() takes yyyy,mm,dd format to make object. -1 because month start from 0
+                }
+
+                function isValidDate(d) { // Check if date is a Date object and is a valid date by converting to a number in millis.
+                    return d instanceof Date && !isNaN(d);  // d should be an object of type Date and should be a number (date can be denoted by number in millis)           
+                }
+
+                function clearSpans(){
+                    document.getElementById("errorOid").innerHTML = "";
+                    document.getElementById("errorName").innerHTML = "";
+                    document.getElementById("errorBDate").innerHTML = "";
+                    document.getElementById("errorSDate").innerHTML = "";  
+                    document.getElementById("errorTotal").innerHTML = "";
+                }
+
+                function focusOn(element){
+                    element.focus();
+                    return false;     
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <form action="">
+            Order ID: <input type="text" size="15" id="oid"><span id="errorOid"></span><br><br>
+            Customer name: <input type="text" size="15" id="name"><span id="errorName"></span><br><br>
+            Enter Billing date: <input type="text" size="15" id="bdate"><span id="errorBDate"></span><br><br>
+            Enter Shipping date: <input type="text" size="15" id="sdate"><span id="errorSDate"></span><br><br>
+            Order total: <input type="text" size="15" id="total"><span id="errorTotal"></span><br><br>
+            <input type="button" name="display" size="15" id="display" value="Display"><br>
+            <span id="displayArea"></span>
+        </form>
+    </body>
+</html>

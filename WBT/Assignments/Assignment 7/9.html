@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#reset").click(clear);
+                $("#test").click(function(){
+                    clear();
+                    var search = $("#search").val();
+                    if (search!= "")
+                        $("td:contains(" +"'"+search+"'"+ ")").css("background-color","yellow")
+                })
+                function clear(){
+                    $("td").css("background-color",""); 
+                }
+            });      
+        </script>
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <td>Jane Smith</td>
+                <td>Marketing</td>
+            </tr>
+            <tr>
+                <td>John Smith</td>
+                <td>Technology</td>
+            </tr>
+            <tr>
+                <td>Brian Adam</td>
+                <td>Sales</td>
+            </tr>
+            <tr>
+                <td>Mary Jones</td>
+                <td>Support</td>
+            </tr>
+            <tr>
+                <td>Michael Jefferson</td>
+                <td>Technology</td>
+            </tr>  
+        </table><br>
+        <form action="">
+            Search: <input type="text" id="search"><br><br>
+            <input type="button" value="Test It" id="test">
+            <input type="reset" value="Reset" id="reset">
+        </form>
+        
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("img").click(function(){
+                    $(this).animate({'margin-left' : '30%'},500).animate({'margin-top' : '100px'},500).animate({'width' : '400px'},500, function(){
+                        $(this).css('border','2px solid blue');
+                    })
+                })
+            });      
+        </script>
+    </head>
+
+    <body>
+        <img src = 'flower.jpg' width="200px">
+    </body>
+</html>
