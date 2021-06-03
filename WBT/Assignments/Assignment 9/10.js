@@ -1,4 +1,3 @@
-const { defaultMaxListeners } = require('events');
 var fs = require('fs');
 var empid = "1002";
 var resignDate = "03-06-2021";
