@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Ram",
+        "address" : "12/24 Karol Bagh",
+        "phone": "9999889999",
+        "rating": 8
+    },
+    {
+        "name": "Shaym",
+        "address" : "9/10 Shalimar Bagh",
+        "phone": "92339889649",
+        "rating": 9
+    },
+    {
+        "name": "Raju",
+        "address" : "9 Lilac II Gurgaon",
+        "phone": "78996782388",
+        "rating": 10
+    }
+]

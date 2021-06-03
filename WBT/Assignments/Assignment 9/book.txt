@@ -1,0 +1,6 @@
+{
+  "bookid": 1,
+  "name": "Mathematics for Class 12th",
+  "author": "R.S Aggarwal",
+  "price": 500
+}
