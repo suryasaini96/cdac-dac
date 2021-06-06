@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </head>
+    <style>
+        div.container{
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 1px solid black;
+            width: max-content;
+            border-radius: 10px;
+            padding: 0px;
+            overflow: hidden;
+        }
+        h2{
+            color: white;
+            text-align: center;
+            border-bottom: 1px solid black;
+            padding-top: 0px; 
+            padding-bottom: 20px; 
+        }
+        input:not([type="checkbox"]):not([type="button"]){
+            border-radius: 15px;
+            padding: 5px 5px 5px 25px;
+            margin: 5px 15px;
+        }
+        input[type="checkbox"]{
+            margin: 5px 0px 5px 15px;
+        }
+        input:focus{
+            outline: none;
+        }
+        label{
+            color: white;
+            font-size: 15px;
+        }
+        a{
+            color: lightgreen;
+        }
+        a:visited{
+            text-decoration: none;
+        }
+        input[type="button"]{
+           float: right;
+           clear: both;
+           background-color: rgb(101, 173, 7);
+           color: white;
+           width: 130px;
+           border-radius: 15px;
+           margin: 5px 15px;
+           padding: 5px;
+        }
+        .inputContainer i {
+            position:absolute;
+        }
+        .icon {
+            padding: 11px 0px 0px 23px;
+            color: rgb(101, 173, 7);
+            text-align: left;
+        }
+    </style>
+    
+    <body>
+        <div class="container">
+            <h2>Create an Account</h2>
+            <form action="">
+                <div class="inputContainer">
+                    <i class="fa fa-user icon"> </i>
+                    <input type="text" name="name" size="50" placeholder="Name"><br>
+                    <i class="fa fa-phone icon"> </i>
+                    <input type="text" name="phone" size="50" placeholder="Phone Number"><br>
+                    <i class="fa fa-envelope icon"> </i>
+                    <input type="text" name="email" size="50" placeholder="Email"><br>
+                    <i class="fa fa-key icon"> </i>
+                    <input type="text" name="password" size="50" placeholder="Password"><br>
+                </div>
+                <input type="checkbox" name="terms" id="terms">
+                <label for="terms">I agree to the <a href="">Terms and Conditions</a> and <a href="">Privacy Policy</a></label><br>
+                <input type="button" value="Create Account">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        fieldset{
+            width: max-content;
+            background-color: rgb(125, 180, 22);
+        }
+        .container{
+            padding: 5px 90px 3px 10px;
+            margin: 2px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border: 1px solid white;
+            border-radius: 4px;
+            background-color: rgb(163, 212, 26);
+        }
+        input::placeholder{
+            font-style: italic;
+            font-size: smaller;
+            font-weight: lighter;
+        }
+    </style>
+    <head></head>
+    <body>
+        <fieldset>
+            <h3>Your details</h3>
+            <form action="">
+                <div class="container">
+                    Name: <input type="text" placeholder="First and last name">
+                </div>
+                <div class="container">
+                    Email: <input type="text" placeholder="example@domain.com">
+                </div>
+                <div class="container">
+                    Phone: <input type="text" placeholder="Eg. +447500000000">
+                </div>
+            </form>
+        </fieldset>
+    </body>
+</html>

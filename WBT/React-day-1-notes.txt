@@ -1,0 +1,195 @@
+//lambda , fat arrow
+
+function greet(){
+  console.log("Hello World-1")
+}
+greet()
+
+//----------------------
+
+var greet1 = function(){
+  console.log("Hello World-2")
+}
+greet1()
+//------------------------------
+var greet2 = () => {
+  console.log("Hello World-3")
+}
+greet2()
+
+
+var f1 = () => {...}
+var f2 = (arg) => {....}
+var f3 = arg => {...}
+var f4 = (a,b,c) => {multiple lines of code}
+var f5 = (a,b,c) => ..... //func does single of code
+
+//------------------------------
+var greet2 = name => console.log("Hello World-3 " + name);
+       
+greet2('Pratiksha')
+
+
+function add(a,b){
+  return a + b;
+}
+console.log(add(10,20))
+
+//-------------------
+var add1 = function(a,b){
+  return a + b;
+}
+
+console.log(add1(11,22))
+
+//-----------------------------
+
+var add2 = (a,b) => a+b;
+console.log(add2(100,200))
+
+
+function strop(str){
+  console.log(str.length);
+  console.log(str.toUpperCase());
+  console.log(str.charAt(7))
+}
+strop("hello World")
+
+
+var strop1 = str => {
+  console.log(str.length);
+  console.log(str.toUpperCase());
+  console.log(str.charAt(7))
+}
+strop1("welcome to JS")
+
+
+Objects in JS
+1)  func cons
+function Book(...){}
+
+2) Obj initialser, JSON
+
+
+3) class
+
+class Greeting{
+  
+  greet(){
+    console.log("Hello World")
+  }
+  
+  add(a,b){
+    return a + b;
+  }
+  
+}
+var g1 = new Greeting();
+g1.greet()
+console.log(g1.add(10,20))
+
+
+--------------------------------
+
+class Greeting{
+  
+  constructor(){
+    this.msg = "welcome";
+  }
+  
+  greet(){
+    console.log("Hello World " + this.msg)
+  }
+ 
+}
+
+var g1 = new Greeting();
+g1.greet()
+
+
+-----------------------------------
+
+class Greeting{
+  
+  constructor(name){
+    this.msg = name;
+  }
+  
+  greet(){
+    console.log("Hello World " + this.msg)
+  }
+ 
+}
+
+var g1 = new Greeting("Anshuman");
+g1.greet()
+
+-------------------------------
+
+
+
+
+function add(){
+  
+  var sum = 0;
+  for(ele of arguments)
+    sum += ele;
+  
+  return sum;
+}
+
+//console.log(add(1,2))
+//console.log(add(1,2,3,4,5,6,7,8))
+
+//---------------------------
+
+function add(...abc){
+  
+  var sum = 0;
+  for(ele of abc)
+    sum += ele;
+  
+  return sum;
+}
+
+console.log(add(1,2))
+console.log(add(1,2,3,4,5,6,7,8))
+
+
+--------
+
+var names =['aaa','bbb','ccc']
+var modules = ['java','ajax', 'node', 'react']
+
+var arr = [...names, ...modules]
+console.log(arr)
+
+-----------------------
+
+
+function Person(props){
+  return(
+    <div class="person">
+       <h3>Name : {props.sname} </h3>
+       <h3>Age : {props.age} </h3>
+    </div>
+  );
+}
+
+var app = (
+  <div>
+    <Person sname="Sandeep" age="50"/>
+    <Person sname="Soha" age="27"/>
+    <Person sname="Arnav" age="18"/>
+   <div>
+);
+
+ReactDOM.render(app, document.querySelector("#div1"));
+
+
+------------------
+
+<div id="div1"></div>
+
+
+

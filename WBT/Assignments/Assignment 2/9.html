@@ -22,20 +22,65 @@
             text-decoration: none;
         }
 
+        div {
+            display: inline-block;
+        }
+
+        section{
+            display: inline-block;
+        }
+
+        article{
+            display: inline-block;
+            background-color: orange;
+            width: 600px;
+        }
+
+        aside:not(#leftAside){
+            display: inline-block;
+            background-color: yellow;
+            margin-left: 20px;
+            width: 300px;
+            text-align: top;
+        }
+
     </style>
     <head>
 
     </head>
 
     <body>
-        <header>GeekWire
-        <nav>
-            <a href="">News</a>
-            <a href="">Jobs</a>
-            <a href="">Events</a>
-            <a href="">Resouces</a>
-            <a href="">About</a>
-        </nav></header>
+        <header>
+            <span>GeekWire</span>
+            <nav>
+                <a href="">News</a>
+                <a href="">Jobs</a>
+                <a href="">Events</a>
+                <a href="">Resouces</a>
+                <a href="">About</a>
+            </nav>
+        </header>
+        <div>
+            Latest News
+        </div>
+        <main>
+            <section>
+                <article>
+                    <section>
+                        <img src="https://cdn.geekwire.com/wp-content/uploads/2021/06/Image-from-iOS-2-1260x840.jpg" width="600" alt="">
+                        <h2>The future of events: How industry conferences and big gatherings will work after the pandemic.</h2> 
+                    </section>
+                </article>
+                <aside>
+                    This is aside
+                </aside>
+
+            </section>
+
+            
+        </main>
+        
+        
         
         
     </body>
