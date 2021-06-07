@@ -1,0 +1,25 @@
+.article{
+    width: 70%;
+    text-align: left;
+    display: inline-block;
+    transition: box-shadow .3s;
+    margin-bottom: 10px;
+    background-color:snow;
+    box-shadow: 0 0 11px rgba(33,33,33,.1);
+
+}
+
+.article img{
+    float: left;
+    margin: 10px 10px 10px 0px;
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    border-radius: 10px;
+}
+
+.article:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.4);
+}
+
+p{
+    font-style: italic;
+}
