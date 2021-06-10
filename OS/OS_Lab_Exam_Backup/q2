@@ -1,5 +1,0 @@
-sudo cp /etc/*.conf ~surya 
-
-# cp command will copy all the .conf files from that directory to my home directory (~surya).
-# Needed to give sudo permissions to it since some of the files have permissions denied. 
-# Other way around we can just login as root and copy them that way.
