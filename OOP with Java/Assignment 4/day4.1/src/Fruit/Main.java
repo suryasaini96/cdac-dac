@@ -9,7 +9,7 @@ public class Main {
 		System.out.println("Basket capacity: ");
 		int n = sc.nextInt();
 		Fruit[] basket = new Fruit[n];
-		int i=0,ch;
+		int i=0,ch=5;
 		do {
 			System.out.println("1. Apple");
 			System.out.println("2. Orange");
@@ -17,39 +17,36 @@ public class Main {
 			System.out.println("4. Display basket");
 			System.out.println("5. Exit");
 			System.out.println("Enter choice: ");
-			ch = sc.nextInt();
-			String name,taste;
+			if (sc.hasNextInt()) 
+				{ch = sc.nextInt(); sc.nextLine();}
+			else {System.out.println("Wrong choice! Exited!"); sc.close(); return;}	
 			switch (ch) {
 			case 1: System.out.println("Name and taste: ");
-					name = sc.next(); sc.nextLine();
-					taste = sc.next();
-					Fruit apple = new Apple(name,taste);
+					Fruit apple = new Apple(sc.next(),sc.next());
 					if (i<n) basket[i++] = apple;
-					else {System.out.println("Basket is full!"); ch=5;}
+					else System.out.println("Basket is full!");
 					break;
 			case 2: System.out.println("Name and taste: ");
-					name = sc.next(); sc.nextLine();
-					taste = sc.next();
-					Fruit orange = new Orange(name, taste);
+					Fruit orange = new Orange(sc.next(),sc.next());
 					if (i<n) basket[i++] = orange;
-					else {System.out.println("Basket is full!"); ch=5;}
+					else System.out.println("Basket is full!");
 					break;
 			case 3: System.out.println("Name and taste: ");
-					name = sc.next(); sc.nextLine();
-					taste = sc.next();
-					Fruit mango = new Mango(name, taste);
+					Fruit mango = new Mango(sc.next(),sc.next());
 					if (i<n) basket[i++] = mango;
-					else {System.out.println("Basket is full!"); ch=5;}
+					else System.out.println("Basket is full!");
 					break;
 			case 4: for (Fruit fruit: basket) 
-						System.out.println(fruit.toString());
+						if(fruit!=null)
+							System.out.println(fruit.toString());
 					break;
 			case 5: System.out.println("Exited.");
 					ch=5; break;
 			default: System.out.println("Wrong choice!");
-					ch=5; break;	
+					break;	
 			}
 		}while(ch!=5);
+		sc.close();
 	}
 	
 	
