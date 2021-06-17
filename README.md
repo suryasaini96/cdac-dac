@@ -4,7 +4,7 @@
 
 Contains all my eDAC assignments and notes.
 
-https://visitor-badge.glitch.me/badge?page_id=suryasaini96.cdac-dac
+![visitors](https://visitor-badge.glitch.me/badge?page_id=suryasaini96.cdac-dac)
 
 > **Authors**
 
