@@ -7,7 +7,7 @@ public class GrowableStack implements Stack {
 
 	@Override
 	public void push(Employee emp) {
-		if (top!=STACK_SIZE-1) 
+		if (top!=stack.length-1)
 			stack[++top] = emp;
 		else { // Upon stack full
 			Employee[] temp = stack;
