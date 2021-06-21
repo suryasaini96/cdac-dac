@@ -26,16 +26,33 @@ public class Customer {
 		this.dob = dob;
 		this.type = type;
 	}
+	
+	public Customer(String email) {
+		super();
+		this.email = email;
+	}
 
 	@Override
 	public String toString() {
 		return "Customer [name=" + name + ", email=" + email + ", password=" + password + ", registrationAmount="
-				+ registrationAmount + ", dob=" + dob + ", type=" + type + "]";
+				+ registrationAmount + ", dob=" + sdf.format(dob) + ", type=" + type + "]";
 	}
 
-	public String getEmail() {
-		return email;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		return true;
 	}
-	
 	
 }

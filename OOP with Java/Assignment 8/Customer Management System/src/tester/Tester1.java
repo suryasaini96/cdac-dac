@@ -19,8 +19,9 @@ public class Tester1 {
 				System.out.println("Enter choice: ");
 				ch = sc.nextInt();
 				switch (ch) {
-				case 1: System.out.println("Enter Customer(String name, String email, String password, double registrationAmount, String dob,"
+				case 1: System.out.println("Enter Customer(String name, String email, String password, double registrationAmount, String dob, "
 						+ "String CustomerType) ");
+						System.out.println("Name, Email - eg. something@domain.com, Password - 4 to 10 chars, Reg. Amount - multiple of 500, DOB - before 1-1-1995 in dd-MM-yyyy, CustomerType=[SILVER,GOLD,PLATINUM]");
 						Customer cust = getCustomer(sc.next(),sc.next(),sc.next(),sc.nextDouble(),sc.next(),sc.next(),customers);
 						if(i!=customers.length) 
 							customers[i++] = cust;

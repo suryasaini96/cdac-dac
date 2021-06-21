@@ -15,11 +15,12 @@ public final class ValidationRules {
 	public static final Customer getCustomer(String name, String email, String password, double amt, String date, String type, Customer[] customers) throws CustomerHandlingException {
 		Date d = getDob(date);
 		CustomerType t = getCustomerType(type);
-		if (checkEmail(email) && checkPassword(password) && checkRegAmount(amt) && d!=null && t!=null) {
+		if (checkEmail(email) && checkPassword(password) && checkRegAmount(amt)) {
+			Customer unique = new Customer(email);
 			for(Customer c: customers) {
 				if (c!=null) 
-					if(c.getEmail().equals(email))
-						throw new CustomerHandlingException("Customer already exists!");
+					if(c.equals(unique))
+						throw new CustomerHandlingException("Customer already exists!");	
 			}
 		}
 		return new Customer(name, email, password, amt, d, t);
@@ -43,8 +44,8 @@ public final class ValidationRules {
 	}
 	
 	private static Date getDob(String date) throws CustomerHandlingException {
-		Date dob = null;
-		Date when = null;
+		Date dob;
+		Date when;
 		try{
 			dob = sdf.parse(date);
 			when = sdf.parse("1-1-1995");
@@ -56,7 +57,7 @@ public final class ValidationRules {
 	}
 	
 	private static CustomerType getCustomerType(String type) throws CustomerHandlingException {
-		CustomerType t = null;
+		CustomerType t;
 		try {
 			t = CustomerType.valueOf(type.toUpperCase());
 		} catch (IllegalArgumentException e) {
