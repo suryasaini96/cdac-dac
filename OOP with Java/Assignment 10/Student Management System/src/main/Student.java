@@ -61,11 +61,10 @@ public class Student {
 	@Override
 	public String toString() {
 		return "Student [prn=" + prn + ", name=" + name + ", email=" + email + ", password=" + password + ", course="
-				+ course + ", gpa=" + gpa + ", dob=" + dob + "]";
+				+ course + ", gpa=" + gpa + ", dob=" + sdf.format(dob) + "]";
 	}
-	
-	
-	
-	
 
+	public void setGpa(double gpa) {
+		this.gpa = gpa;
+	}
 }
