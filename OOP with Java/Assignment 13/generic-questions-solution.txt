@@ -1,0 +1,35 @@
+Generics Question
+
+ 1. Given  
+public class Fruit{}
+public class Melon extends Fruit{}
+public class WaterMelon extends Melon{}
+
+Which of the following, will be legal ?
+List  : Producer (read)
+1.List<? extends Fruit> fruits=new ArrayList<Fruit>();//no err
+2.List<? extends Fruit> fruits=new ArrayList<Melon>();//no err
+3.List<? extends Fruit> fruits=new LinkedList<WaterMelon>();//no
+4.List<? extends Fruit> fruits=new Vector<Object>();//err
+List : Consumer (write)
+5.List<? super Melon> melons=new ArrayList<Fruit>();//no err
+6.List<? super Melon> melons=new LinkedList<Melon>();//no err
+7.List<? super Melon> melons=new LinkedList<WaterMelon>();//err (? super Melon => Melon or Fruit or Object) n since Melon is not a Watermelon : javac err
+
+2. 
+Given  
+public class Fruit{}
+public class Melon extends Fruit{}
+public class WaterMelon extends Melon{}
+
+Which of the following, will be legal ?
+//public boolean addAll​(Collection<? extends E> c)
+1. List<Melon> melons=new ArrayList<>();//no err
+2. HashSet<Fruit> fruits=new HashSet<>();//no err
+3. LinkedList<WaterMelon> wMelons=new LinkedList<>();//no err
+4. melons.addAll(fruits);//err
+5. melons.addAll(wMelons);//no err
+6. fruits.addAll(melons);//no err
+7. fruits.addAll(wMelons);//no err
+8. wMelons.addAll(fruits);//err
+9. wMelons.addAll(melons);//err
