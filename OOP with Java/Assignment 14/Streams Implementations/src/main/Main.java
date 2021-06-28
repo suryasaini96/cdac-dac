@@ -19,7 +19,7 @@ public class Main {
 		System.out.println("\nUsing method reference");
 		Arrays.stream(array).forEach(System.out::print);
 		
-		// 2. Stream of primitive array 
+		// 2. Stream of ArrayList 
 		List<Integer> list = new ArrayList<>(Arrays.asList(22,31,16,9,4));
 		System.out.println("\nUsing sequential stream on ArrayList");
 		list.stream().forEach(e -> System.out.print(e + " "));
