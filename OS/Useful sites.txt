@@ -1,0 +1,2 @@
+www.ryantutorials.net     // For bash scripting 
+www.regexone.com	  // For regex tutorial
