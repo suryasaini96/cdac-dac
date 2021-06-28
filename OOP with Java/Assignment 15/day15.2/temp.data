@@ -1,0 +1,595 @@
+Day 1
+1. Refer to "Installation Instructions" from day1-data\day1_help & complete.
+
+2. MUST go through "readme_day1"  from day1-data\day1_help\readmes & day1-data\day1_help\slides\PPTDay1.pdf
+
+3. Go through simple code samples from day1-data\code\src
+
+4. Solve 
+1. Accept 2 double values from User (using Scanner). Check data type.
+. If arguments are not doubles , supply suitable error message & terminate.
+If numbers are double values , print its average.
+
+2. Display food menu to user. User will select items from menu along with the quantity. (eg 1. Dosa 2. Samosa .......10 . Generate Bill ) Assign fixed prices to food items(hard code the prices)
+When user enters 'Generate Bill' option(10) , display total bill & exit.
+
+OR 
+Create java application for the following
+Accept 2 numbers from user & operation to perform
+1. Add 2.Subtract 3. Multiply 4.Divide 5.Exit
+Display the result of the operation. 
+Java app must continue to run till user chooses exit option.
+
+OR
+Prompt user for how many numbers(double) to accept
+Create suitable data structure to hold these numbers.
+Prompt user to populate the values in D.S
+Display the same.
+Prompt user for option
+1. Double nums
+2. Square nums
+3. Square root nums
+As per the option , apply this operation on all nums in the D.S
+display the same.
+
+
+Day2
+1. Do complete revision of class work & then solve today's assignemnts
+
+2. 
+Solve Tank assignment along with memory picture.
+
+What will be the output ?
+
+class Tank {
+  private int level;
+  Tank(int l)
+   {
+     level=l;
+   }
+  public void setLevel(int level1)
+  {
+    level=level1;
+  }
+  public int getLevel()
+  {
+    return level;
+  }
+}	
+
+public class Assignment {
+  public static void main(String[] args) {
+    Tank t1 = new Tank(10);
+    Tank t2 = new Tank(20);
+     s.o.p("1: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());//10 20
+    t1 = t2;//1st tank obj is marked GC
+    s.o.p("2: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());//20 20
+    t1.setLevel(27);
+     s.o.p("3: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());//27 27
+    t2.setLevel(t1.getLevel()+10);
+     s.o.p("4: t1.level: " + t1.getLevel() +
+          ", t2.level: " + t2.getLevel());//37 37
+  }
+}
+
+2.5 Solve ready code samples from : day2_data\day2_help\params_passing\
+TestParamPassing1 & TestParamPassing2
+
+3. Solve
+Create Point class Point2D   : for representing a point in x-y co-ordinate system.
+
+3.1 Create a parameterized constructor to accept x & y co-ords.
+
+
+3.2 Add a method to return string form of  point's x & y co-ords
+Hint :  public String getDetails()) 
+
+
+3.3 Add isEqual method to Point2D class : boolean returning method : must return true if both points are having same x,y co-ords or false otherwise.
+
+
+3.4 Add a method to Point2D class -- to create and return new point having given x & y offset.
+eg : Point2D p1=new Point2D(10,20);
+Point2d p3=p1.createNewPoint(5,-2);
+If user supplies offset of (5, -2) : your method should return a new point object placed at (15,18)
+
+
+3.5 Add calculateDistance method to calculate distance between current point & specified point & return the distance to the caller.
+Hint : Use distance formula . Use java.lang.Math class methods --sqrt, pow etc.
+double calcDistance(Point2D anotherPointRef)
+{
+}
+
+3.6 Write TestPoint class ,  with a main method
+Accept co ordinates of 2 points from user (Scanner) --p1 & p2
+
+3.7 Use getDetails method to display point details.(p1's details & p2's details)
+
+3.8 Invoke isEqual & display if points are same or different (i.e p1 & p2 are located at the same position)
+
+3.9 Create new point p3 , with the dimensions offset from p1.
+
+Day 3
+
+1. Revise entire class work.
+
+1.1 Import eclipse project day3.1 in your workspace
+
+Solve this
+Double box width for all boxes having volume > 100.(USE for-each & solve this : for understnding for-each clearly)
+
+
+1.5 Solve this without IDE pls.
+Copy earlier created Point2D class  n place it under the package "com.geometry"
+Copy earlier created TestPoint class n place it under "tester" package.
+Solve compiler errors n run it without IDE , w/o setting classpath
+Then set CLASSPATH , so that you can run it from anywhere
+
+
+
+2. Solve
+Create new eclipse project "day3_assgnment"
+Copy Point2D class n TestPoints class along with the packages in IDE.
+
+2.1 Create a new tester in package "com.tester" : TestPointArray
+ Prompt user , how many points to plot?
+Create suitable data structure  , to store Point2D type of references.
+eg : Point2D[] points=new Point2D[sc.nextInt()];//10
+
+2.2 Add a menu , Run the application till user chooses option 10 (exit)
+
+1 Plot a new point
+I/P --index , x & y
+eg : If user supplies 5 50 100
+Create a Point2D with x, y of (50,100) & its reference should be stored at the 5th index position in array.
+eg : if (index < .... && points[index] == null)
+         points[index] =new Point2D(....);
+       else
+         sop("point plotting error!!!!!");
+
+2 Display all points plotted so far. (Use for-each)
+Q : is null checking required ? 
+for (Point2D p : points)
+    sop(p);
+
+3. Test equality of 2 points
+I/P : index1 , index 2
+eg If user enters 1 7 , you have to check if point at 1st n 7th index is same.
+If same , print "SAME" , otherwise print "DIFFERENT"
+
+4. Calculate distance
+I/P strt , end point indexes.
+eg : If user enters 2 6
+Find out the distance between 2nd & 6th point. (array indexes start from 0)
+
+10. Exit
+
+Note : Boundary condition checking & null checking is expected.
+(Meaning : if user supplies invalid index , then give error message : invalid index --out of range
+If no point is plotted at user specified index , then give error message : invalid index -- no point plotted here.)
+
+Day 4
+1. Import day4.1 in your workspace.
+Through today's code samples : try to understand points below
+1.0 static keyword & it's usages
+1.1 Do complete revision of constructor invocation in the inheritance hierarchy
+1.2 Revise from javadocs , Object class's toString method.
+What does it return ?
+1.3 What is the need of overriding(modifying) toString ?
+1.4 How do you do it ?
+1.5 What's upcasting & where do you need it ?
+1.6 Example of run time polymorphism (in Test2 & Test3 from "tester" package) 
+
+2. Complete pending work.
+
+3.Optional assignment(if time permits!)
+
+Create basket of fruits . Prompt user for the capacity of the basket.
+
+Available fruits are 
+Apple (sweet n sour in taste)
+Mango (sweet)
+Orange (sour)
+
+Allow user to add any fruit dynamically in the basket.
+User should be able to display the name of the fruit & taste , for all the fruits added in the basket.
+Hint : name : data member
+taste() : a method
+
+
+Day 5
+1. Revise complete class work(import day5.1 , day5.2 , day 5.3)
+
+2. Apply inheritance , polymorphism & abstraction to emp based organization scenario.
+
+Create Emp based organization structure --- Emp , Mgr , Worker
+All of above classes must be in package--com.app.org
+
+2.1 Emp state--- id(int), name, deptId(string) , basic(double)
+
+Behaviour ---1.  get emp details -- use toString.
+2. compute net salary ---
+eg : public double computeNetSalary()
+
+2.2 Mgr state  ---id,name,basic,deptId , perfmonceBonus
+Behaviour ----1. get mgr details :  override toString. 
+2. compute net salary (formula: basic+performanceBonus) 
+3. get performance bonus. --add a new method to return bonus.(getter)
+
+
+2.3 Worker state  --id,name,basic,deptId,hoursWorked,hourlyRate
+Behaviour--- 
+1. get worker details -- :  override toString.
+2.  compute net salary (formula:  = basic+(hoursWorked*hourlyRate) --override computeNetSalary
+3. get hrlyRate of the worker  -- add a new method to return hourly rate of a worker.(getter)
+
+Can you organize these classes in inheritance  hierarchy.
+
+2.4 Write TestOrganization in "tester" package.
+Create suitable data structure  to store organization details.
+
+Provide following options. Run the application till "exit"
+
+1. Hire Manager
+
+2. Hire Worker  
+
+3. Display information of all employees including net salary  using single for-each loop.
+Display from the same for-each loop, performance bonus if it's a manager or if it's a worker , display hourly rate of the worker .
+
+4. Update performanceBonus or hourly rate
+I/P : emp id , bonus or hourly rate increment
+Update the details suitably.
+
+5. Exit
+
+
+3. Solve ready code samples . (w/o IDE : guess what will happen?)
+
+
+Day 6
+0. Import day6.1 (abstract classes n methods) , day6.2 (interfaces n implementation classes) & day6.3 (intro to exc handling) & revise .
+
+0.5 covariant demo
+
+1. Create Java application for fixed stack & growable stack based on Stack i/f , for storing emp details
+
+Steps
+1.1  Create Employee class -- id,name,salary, constructor,toString
+1.2 Stack interface -- push & pop functionality for Emp refs. & declare STACK_SIZE as a constant. 
+1.3 Create implementation class of Stack i/f -- FixedStack (array based)
+1.4 Create another implementation class of Stack i/f-- GrowableStack (array based)
+
+1.5
+
+From Tester class (Hint :  use dynamic method dispatch using interfaces)
+--- display Menu
+(Note : Must use 1 switch-case only. You won't need any complex nested control structure
+Once user selects either fixed or growable stack , user shouldn't be allowed to change the selection of the stack.(Hint : null checking)
+)
+1 -- Choose Fixed Stack
+2 -- Choose Growable Stack
+Accept following options only after initial selection.(Hint : null checking)
+3 -- Push data 
+I/P Accept emp details & store these details in the earlier chosen stack
+4 --- Pop data & display the same (from the earlier chosen stack)
+5 -- Exit
+
+
+Day 7
+1. Complete pending assignments.
+
+2. Revise exception handling & string handling , by importing day7.1 n day7.2 + readmes.
+
+3. Optional assignment
+
+Create a class Vehicle , under the package : com.app.vehicles , to represent any vehicle. 
+tight encapsulation
+state(data members)  : registrationNo : String , color : String , price : double
+registrationNo  MUST be unique (non duplicate) for any vehicle (primary Key : unique ID)
+Override toString to return complete state.
+
+Create a class TestVehicle under the package "tester"
+Accept details of 2 vehicles from user . 
+Display "SAME" or "DIFFERENT" , using inherited "equals" method , from Object class.
+Observe & conclude
+Is there any problem ?
+If yes : think of the solution.
+
+Day 8
+1. import day8.1 & day8.2  to revise StringBuilder , var-args , Date / Time Handling , enums
+(Refer to individual readmes)
+
+2. Weekend assignment
+Create Java application for customer management system.
+
+2.1 Customer : name(string),email(string),password(string),registrationAmount(double),dob(Date),type (CustomerType : enum)
+CustomerType : SILVER,GOLD,PLATINUM
+Add/generate suitable constructor & toString
+Unique ID(Primary Key ) : email  (2 customers are SAME iff their email ids are same)
+Will you add any other data member in Customer class for parsing n formatting dates ? 
+HOW ? : 
+
+
+2.2 Create custom exception (checked exception )class in a separate package
+CustomerHandlingException
+
+2.3 Create in "utils" package : ValidationRules
+Rules 
+email must contain "@" & should be from ".com" domain
+password must be min 4 max 10 chars long
+reg amount should be multiples of 500
+dob should be before 1st Jan 1995
+duplicate customer details should not be stored.
+
+Supply these validation rules using different static methods.
+(Centralized exception handling is expected)
+
+2.4 Create a simple tester : Tester1 
+MUST use try-with-resources to create scanner.
+Options
+1. Prompt for customer details
+Validate customer details (using validation rules)
+You should not  accept duplicate customer details
+Iff it's valid , create customer instance , o.w display error message via catch clause.
+
+2. Display details of all registered customers
+(for-each)
+
+3. Exit
+
+Day 9
+1. Before revising today's topics , pls complete pending work (with help of lab faculty)
+
+2. import day9.1 & day9.2 , to revise :
+applying equals in validation rules , nested classes , association , why generics
+
+3. Solve ready code sample , with help of lab faculty 
+day8-data\day8_help\enums\enums
+
+Day 10
+1. Import day10.1 & day10.2 to revise : generic classes , static nested class, ArrayList API
+
+2. Solve :
+Either continue with earlier Customer class or can Create a new data type 
+Student  : 
+2.1 Student : prn (string : unique id) , name , email , password, course (enum) ,GPA(double) , dob(Date)
+Add suitable constructor/s , toString , equals (as per the requirement)
+2.2 Course (enum) : DBT,REACT,ANGULAR,REST,SPRING,HIBERNATE
+
+2.3 Create custom exception class
+
+2.4 NO validation rules currently (keeping it simple!)
+
+2.5 Create a Tester with following options (use dynamic data structure : ArrayList)
+MUST use AL methods.
+1. Add student details
+2. Fetch Student details
+I/P : student'd PRN
+Either display details or throw custom exception , in case of invalid PRN
+
+3. Display All student details
+
+4. Cancel Admission
+I/P : student'd PRN
+Either remove student  details or throw custom exception , in case of invalid PRN
+
+5. Update GPA
+I/P : student'd PRN n new GPA
+Either update student  details or throw custom exception , in case of invalid PRN
+
+
+Day 11
+1. Complete Day10's pending assignment first (before revision)
+OR
+Customer based assignment
+Options
+1. Customer registration (no dups pls!)
+i/p : customer details
+o/p err mesg in case of invalid / dup inputs or success mesg
+2. Customer login
+i/p : email , password
+o/p invalid email or invalid password or login successful mesg
+3. Unsubscribe customer
+i/p : email
+o/p  invalid email mesg or delete customer details
+
+4. Apply discount to all customers of specified plan registered before specific date
+n Display names of such customers
+i/p : plan(silver/gold...) ,reg date , discount in %
+
+2. Import day11.1 in your workspace, revise CRUD , searching , sorting , anonymous inner class .
+3. Copy Day10 assignment into Day 11.
+Modify tester to add these options.
+3.0 Create CollectionUtils class , to return populated sample data of students
+3.1 Print names of students enrolled in a specific course , with DoB before a specific date
+I/P : course name & DoB
+3.2 Sort student details as per asc order of PRN , using natural ordering
+3.3 Sort student details as per desc / asc GPA  , using custom ordering & anonymous inner class
+3.4 Sort student details as per course & GPA   , using custom ordering & anonymous inner class
+NOTE : lexicographical sorting of courses is not expected here.(ordinal position based sorting will do!)
+eg : Collections.sort(list,new Comparator<Student>()
+{
+ //compare
+});
+3.5 Remove  details of failed students from the list
+(Failed if GPA < 5)
+Hint : Use Iterator's remove method
+3.6 Display details of the student in reverse order.
+(ListIterator)
+
+Day 12
+1. Complete pending work.
+2. Import all day12 related projects & revise generic methods n generic syntax
+3. Solve
+3.1 Collections.shuffle() to shuffle list elements of type string
+1. Create List of fixed size Strings(Arrays.asList)
+2. Then use shuffle method to shuffle this list n print same.
+1. Create List of fixed size Doubles(Arrays.asList)
+2. Then use shuffle method to shuffle this list n print same.
+
+3. Write a static , generic method to display details (toString) of collection(AL,LL,V,HS,LHS,TS) of any type.
+Usage : AL<Integer> l1, HS<String> l2 , LL<Date> l3
+display(l1/l2/l3);
+
+3.3 Write a generic method to accept ANY type of the collection(any list or any set) of numbers (int/double/float/byte/short...) n return it's sum
+eg : public static double ......(...)
+{
+//Wrapper : double doubleValue()
+}
+
+
+3.1.5
+Use Collections.fill  method , to fill up List of emps with Emp/Mgr/SalesMgr/Worker ....(Emp or any any sub type of emp
+
+
+3.2 Collections.copy to understand extends vs super
+3.3 Write a generic method to accept ANY type of the collection(any list or any set) of numbers (ints/double/float) n return it's sum
+3.4 Write a generic method to accept ANY type of the list of numbers  &   add the specified number to the list. 
+Detailed meaning
+Write a method to accept AL/LL/Vector of either Byte or Long or Double & then add to it Byte or Long or Double ..as per matching signature
+ 
+(For understanding PECS)
+3.5 Solve uploaded "generic-questions"
+
+
+4. Add the populated list of students to HashSet.
+Add students with dup PRN (don't call dup based validation rule)
+Check if it's storing the dups.
+If  yes : fix the problem
+
+
+5. More practise questions for generics
+Emp <---Mgr <----SalesManager
+public class Test1 {
+public static void main(String[] args) {
+ArrayList<Emp> list = new ArrayList<>(Arrays.asList(new Emp(), new Mgr(), new SalesMgr()));
+list.add(new SalesMgr());
+displayDetails(list);
+ArrayList<Mgr> list2 = new ArrayList<>(Arrays.asList(new Mgr(), new SalesMgr(),new Mgr()));
+displayDetails(list2);
+}
+
+// add a static method to display Emp/Mgr/Worker details from any collection
+public static void displayDetails(Collection<Emp> emps) {
+ for (Emp e : emps)
+ System.out.println(e);
+}
+
+}
+
+Day 13
+Before completing the pending work , please follow this sequence
+
+0. Revise today's work by importing eclipse projects
+
+Create a new eclipse project
+1. Store book details in a library in hashing based data structure : HashSet
+Book details : title(string),category(enum),price(double),publishDate,authorName(string),quantity(int)
+Unique ID : book title
+Accept at least 5 book details from user & confirm if hash set is working in a correct manner.
+
+2. Store book details in a library in hashing based data structure : HashMap<String,Book>
+
+Book details : title(string),category(enum),price(double),publishDate,authorName(string),quantity(int)
+Unique ID : book title
+Create a pre-populated map with sample data.(put) : 5 entries
+Supply following options
+2.1 Add book.
+I/P Book details
+(containsKey/get)
+title --(containsKey:false) doesn't exist --prompt for remaining book details
+exists --(containsKey:true ) ---prompt for qty -- (get(key) --> value: bk : setter/getter for qty)
+In case of a new book , store book details in the map.
+In case of duplicate title , just update the quantity
+
+2.2 Display All books in a library
+(values ---for-each)
+
+2.3 Issue out a book.
+i/p book title
+If the book is found , update the quantity suitably.
+(Map : get(key) --> bk , use settters: reduce qty
+
+2.4 Return a book
+i/p book title
+If the book is found , update the quantity suitably.
+(Map : get(key) --> bk , use settters: increase qty)
+
+2.5 Remove book
+i/p book title
+(Map : remove)
+
+Day 14
+1. Complete Day13 pending work.
+
+2. Create a copy of day13 work into a new project n add these options
+2.1. Reduce quantity of all old books by 10 % (i.e books having publish date < specified date)
+I/P : Date 
+
+2.2 Accept a category from user & display all available books(quantity > 0) under specified category
+eg : Category category=Category.valueOf(sc.next().toUppercase());
+for(Book b : lib.values())
+  if(b.getCategory().equals(category))
+   .....
+ 
+
+2.3 Sort books as per the title , display the same.
+(lexicographical order)
+
+2.4 Sort the books as per author & price.
+
+3. Import day14 projects , revise maps n functional programming especially.
+
+4. To be done : completely with lab faculty help
+Understand basic concept of Java 8 Functional streams n solve the following 
+
+1.Create int[] ---> IntStream & display its contents.
+2. Create AL<Integer> , populate it.
+Convert it to seq stream & display elems
+Convert it to parallel stream & display elems
+3. Create stream of ints between 1-100 & display all even elements.
+(Hint : IntStream methods --range,filter,forEach)
+4. Use supplied Product class , Utils class from ready code samples.
+Display all product names of a particular category , exceeding specific price.
+I/P category name & price.
+(stream,filter,forEach)
+
+5. Display sum of all even nos between 1-100 .
+
+6. Display sum of product prices of a specific category.
+I/P category name
+o/p sum.
+
+7. Display average  of product prices of a specific category.
+I/P category name
+o/p average 
+
+8. Find name of the product which is most expensive.
+--------------------------
+More discussion!
+Fruit f=new Mango();
+//Mango m=new Fruit();//javac err
+Mango m=(Mango) new Fruit();//illgeal casting : Classcast exc
+
+With the same logic : 
+Collections.sort(list,(List)map.values());//Classcast exc 
+-----------------
+Extra OPTIONAL Work
+Store emp details in a suitable DS , to ensure constant time performance for CRUD operations
+(which one : HashMap)
+Emp :empPK,salary,name.
+Unique ID : emp id & dept id.
+HashMap<EmpPK,Emp>
+EmpPK : emp id(int),dept(string/enum)
+Must satisfy contract : hashCode,equals (i.e override these methods suitably!)
+
+
+
+
+
+
+
