@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- For refreshing browser every 3 sec -->
+    <!-- <meta http-equiv="refresh" content="3"> -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        span {
+            color: red;
+        }
+        form {
+            align-items: center;
+        }
+        input[type="button"]{
+            margin: 10px 0px;
+        }
+    </style>
+    
+
+    <script type="text/javascript">
+
+        function validate() {
+            const title = document.getElementById('title');
+            const fname = document.getElementById('fname');
+            const lname = document.getElementById('lname');
+            const email = document.getElementById('email');
+            const confirmEmail = document.getElementById('confirmEmail');
+            const seminar = document.getElementById('seminar');
+            const level = document.getElementsByName('level');
+            const cost = document.getElementById('cost');
+
+            return checkName(title, fname, lname) && checkEmail(email, confirmEmail) && checkLevel(level);
+
+            function checkName(title, fname, lname) {
+                if (title.options[title.selectedIndex].text == "Title") {
+                    document.getElementById('errorName').innerHTML = "Please select a title";
+                    return false;
+                }
+                else if (fname.value.length < 3) {
+                    document.getElementById('errorName').innerHTML = "Please enter a valid first name.";
+                    return false;
+                }
+                else if (lname.value.length < 3) {
+                    document.getElementById('errorName').innerHTML = "Please enter a valid last name.";
+                    return false;
+                }
+                else {
+                    document.getElementById('errorName').innerHTML = "";
+                    return true;
+                }
+            }
+
+            function checkEmail(email, confirmEmail) {
+                const pattern = /^\w+@\w+\.com$/;
+                if (!pattern.test(email.value)) {
+                    document.getElementById('errorEmail').innerHTML = "Please select a valid email";
+                    return false;
+                }
+                else if (email.value !== confirmEmail.value) {
+                    document.getElementById('errorConfirmEmail').innerHTML = "Email do not match.";
+                    return false;
+                }
+                else {
+                    document.getElementById('errorEmail').innerHTML = "";
+                    document.getElementById('errorConfirmEmail').innerHTML = "";
+                    return true;
+                }
+            }
+
+            function checkLevel(level) {
+                for (var i = 0; i < level.length; i++) {
+                    if (level[i].checked == true) {
+                        document.getElementById('errorLevel').innerHTML = "";
+                        return true;
+                    }
+                }
+                document.getElementById('errorLevel').innerHTML = "Please select a level";
+                return false;
+            }
+        }
+
+        function getCharges() {
+            var valid = validate();
+            if (valid) {
+                var charges = calc();
+                document.getElementById('cost').value = charges;
+                return charges;
+                function calc() {
+                    var sem = seminar.options[seminar.selectedIndex].value;
+                    var level = $("input[type='radio'][name='level']:checked").val();
+                    if (sem == "SOA") {
+                        if (level == "Introductory")
+                            return 2500;
+                        else if (level == "Intermediate")
+                            return 3500;
+                        else if (level == "Advanced")
+                            return 6000;
+                    } else if (sem == "Design Patterns") {
+                        if (level == "Introductory")
+                            return 4000;
+                        else if (level == "Intermediate")
+                            return 5500;
+                        else if (level == "Advanced")
+                            return 8000;
+                    } else if (sem == "Business Intelligence") {
+                        if (level == "Introductory")
+                            return 5000;
+                        else if (level == "Intermediate")
+                            return 7500;
+                        else if (level == "Advanced")
+                            return 10000;
+                    }
+                }
+            }
+        }
+
+        function displayDetails(){
+            const valid = validate();
+            if (valid){
+                const title = document.getElementById('title').value;
+                const fname = document.getElementById('fname').value;
+                const lname = document.getElementById('lname').value;
+                const email = document.getElementById('email').value;
+                const confirmEmail = document.getElementById('confirmEmail').value;
+                const seminar = document.getElementById('seminar');
+                const sem = seminar.options[seminar.selectedIndex].value;
+                const level = $("input[type='radio'][name='level']:checked").val();
+                const cost = document.getElementById('cost').value;
+
+                var format =  "<table cellspacing=0 cellpadding=1 border=1>" + 
+                    "<tr><td>Name:</td><td>$title $fname $lname</td></tr>" + 
+                    "<tr><td>Email-ID:</td><td>$email</td></tr>"+
+                    "<tr><td>Seminar:</td><td>$seminar</td></tr>"+
+                    "<tr><td>Level:</td><td>$level</td></tr>"+
+                    "<tr><td>Cost:</td><td>$cost</td></tr>"+
+                    "</table>";
+                var details = format.replace("$title", title).replace("$fname", fname).replace("$lname", lname).replace("$email", email).replace("$seminar", sem).replace("$level", level).replace("$cost", cost);
+
+                myWindow = window.open("","Seminar Details", "toolbar=no,scrollbars=no,resizable=no,width=400,height=400");
+                myWindow.document.write(details);
+                return true;
+            }
+            return false;
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <form action="">
+        <h3>Seminar Registration Form</h3>
+        <label for="title"> Participant name: </label>
+        <select id="title" name="title">
+            <option value="Title" selected>Title</option>
+            <option value="Mr.">Mr.</option>
+            <option value="Ms.">Ms.</option>
+            <option value="Dr.">Dr.</option>
+        </select>
+        <input type="text" id="fname" name="fname" placeholder="First Name" />
+        <input type="text" id="lname" name="lname" placeholder="Last Name"> <span id='errorName'></span> <br>
+        <label for="email">Email-ID:</label>
+        <input type="text" id="email" name="email" placeholder="Email" size="25"/> <span id='errorEmail'></span> <br>
+        <label for="confirmEmail">Confirm Email-ID:</label>
+        <input type="text" id="confirmEmail" name="confirmEmail" placeholder="Confirm Email" size="25"> <span
+            id='errorConfirmEmail'></span> <br>
+        <label for="seminar">Seminars: </label>
+        <select id="seminar" name="seminar">
+            <option value="SOA" selected>SOA</option>
+            <option value="Design Patterns">Design Patterns</option>
+            <option value="Business Intelligence">Business Intelligence</option>
+        </select> <span id='errorSeminar'></span> <br>
+        <label for="level">Level: </label>
+        <input type="radio" name="level" value="Introductory"> Introductory
+        <input type="radio" name="level" value="Intermediate"> Intermediate
+        <input type="radio" name="level" value="Advanced"> Advanced <span id='errorLevel'></span> <br>
+        <input type="button" id="calculate" name="calculate" value="Calculate Training Cost" onclick=" return getCharges()"> <br>
+        <label for="cost">Cost of Seminar: </label>
+        <input type="text" id="cost" name="cost"><span id='errorCost'></span><br>
+        <input type="button" id="display" value="Display Details" onclick="return displayDetails()">
+        <input type="button" id="submit" value="Submit" onclick="return validate()">
+
+
+    </form>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
