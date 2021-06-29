@@ -1,0 +1,6 @@
+Product [id=35, name=wheat, productCatgeory=GRAINS, manufactureDate=2018-07-11, price=700.0]
+Product [id=30, name=rice, productCatgeory=GRAINS, manufactureDate=2019-01-13, price=520.0]
+Product [id=45, name=sunflower, productCatgeory=OIL, manufactureDate=2019-05-11, price=550.0]
+Product [id=10, name=rice_bran, productCatgeory=OIL, manufactureDate=2019-11-21, price=450.0]
+Product [id=100, name=mango, productCatgeory=FRUITS, manufactureDate=2019-12-01, price=500.0]
+Product [id=55, name=orange, productCatgeory=FRUITS, manufactureDate=2020-01-01, price=350.0]
