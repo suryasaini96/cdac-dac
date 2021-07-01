@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registration</title>
+        <style>
+
+           
+            .submit{
+                background-color: rgb(10, 177, 177);
+                color: white;
+                text-align: center;
+                border-radius: 20%;
+                margin-left: 80%;
+                padding: 3px 20px;
+            }
+            
+            fieldset{
+                width: 30%;
+                border: 5px solid teal;
+                background-color: rgb(187, 220, 240);
+                border-radius: 4%;
+            }
+            .drop{
+                size: 60;
+            }
+            body{
+                color: black;
+            }
+			
+			form{
+				width: max-content;
+			}
+        </style>
+	</head>
+	<body>
+
+		
+	
+	<form>
+   
+    	<fieldset>
+            <table>
+        <h1><b>Get In Touch!</b></h1>
+        <i>Fill out our super swanky HTML 5 contract form below to get in touch with us
+Please provide us as much information as possible for us to help with you in your enquiry :)</i>
+	<br>
+    <br>
+	    <tr><td>        Name*<br>	
+            <input type="text" 
+                maxlength="20" 
+                autofocus
+                required 
+                size=70>
+            <!--name="Name"
+                value ="Enter your name"
+                readonly--> <br>		
+</td></tr>	
+	
+        <tr><td>
+            Email Address* <br>	<input type="email" required size=70><br>
+
+        </td></tr>
+		<tr><td>
+
+            Telephone <br>	<input type="tel" pattern="[2-9][0-9{2}]]" size=70><br>
+        </td></tr>
+
+        <tr><td>Source of Income<br>
+           
+            <select class="drop">
+                <option value="gen">General</option>
+                <option value="ur">Urgent</option>
+                
+
+            </select>
+        
+        </td></tr>
+        <tr><td>
+            Message*<br><textarea cols=65 rows=8 required ></textarea>
+        </td></tr>
+    </table>
+		
+        * indicates a required field
+		 <br>
+		
+		<input type = "submit" class="submit" value="Holla">
+
+		 
+	</fieldset>
+	</form>
+	<br>
+	<br>
+	<br>
+	<br>
+		
+	</body>
+</html>

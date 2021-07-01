@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registration</title>
+        <style>
+            h1{
+                text-align: center;
+                background-color: rgb(212, 212, 212);
+            }
+            table {
+                color: rgb(34, 133, 136);
+                text-decoration: rgb(3, 168, 160);
+                /* font-style: bold; */
+            }
+            td{
+                font-size: medium;
+            
+
+            }
+            form{
+                border: 10px solid purple;
+                border-radius: 0.5rem;
+				width: max-content;
+            }
+            input{
+                border-width: thin;
+            }
+            .button{
+                background-color: rgb(10, 177, 177);
+                color: white;
+                text-align: center;
+                padding: 10px 28px;
+                margin-left: 85%;
+               
+                   
+            }
+            .name{
+                color: black;
+            }
+			fieldset{
+				width: max-content;
+			}
+        </style>
+	</head>
+	<body>
+		
+	
+	
+	<fieldset>
+        <form>
+        <h1>Create Account</h1>
+        <hr color="rgb(197, 188, 197)" size="1" width=100%>
+	<table cellspacing=10>
+		<tr><td> 	First name* </td><td>Last name</td></tr>
+        <tr><td> 	<input type="text" 
+                            maxlength="20" 
+                            autofocus
+                            required 
+                            placeholder="Enter your first name" >
+        </td><td>	<input type="text" 
+                            maxlength="20"
+                            placeholder="Enter your last name" >
+        </td></tr>
+        <tr><td colspan="2"> 	Email* : <br>	<input type="email" size="98" required><br></td></tr>
+		<tr><td>	Password*<br>	<input type="password" placeholder="Enter your password" required>	</td>
+		<td>	Confirm Password*<br>	<input type="password" placeholder="Enter your password again" required></td></tr>
+		<tr><td> 	Gender:<br>         <input type="radio" name="g" >
+            <span class="name">
+                Male
+            </span>
+          
+										<input type="radio" name="g">
+            <span class="name">
+                Female   
+            </span>
+        
+		</td>
+        <td> Hobbies<br><input type="checkbox">
+            <span class="name">
+                Music
+            </span>
+            <input type="checkbox" >
+            <span class="name">
+                sports
+            </span>
+            <input type="checkbox" >
+            <span class="name">
+                Travel
+            </span>
+            <input type="checkbox" >
+            <span class="name">
+                Movies
+            </span>				</td></tr>
+
+        <tr><td>Source of Income<br>
+
+            <select>
+                <option value="emp">Employed</option>
+                <option value="unemp">Unemployed</option>
+                <option value="Stu">Student</option>
+
+            </select>
+        
+        </td>
+        <td>Income<br><input type="range" min=0 max=20000 value=25 step=5>20K</td></tr>
+		<tr><td> Upload Profile Pictue<br>   <input type="file">						</td>
+        <td> 	Age <br>	<input type="number" min=10 max=100 value=18 step=1></td></tr>
+		<tr><td colspan="2"> Bio<br><textarea cols=100 rows=5 required></textarea>		</td></tr>
+		
+	</table>
+		 <div>
+        
+		    <input type = "submit" class="button" value="Create">
+
+         </div>
+	</form>
+</fieldset>
+	</body>
+</html>

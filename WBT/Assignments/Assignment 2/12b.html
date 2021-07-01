@@ -1,62 +1,88 @@
 <!DOCTYPE html>
 <html>
-    <head>
+	<head>
+		<style>
+		
+            fieldset{
+                width: 50%;
+                border: 8px solid green;
+            }
+            .button{
+                padding: 10px 10px;
+                background-color: rgba(5, 238, 83, 0.712);
+                border-radius: 5%;
+                margin-left: 30% ;
+            }
         
-    </head>
+            .fb{
+                background-color: rgb(40, 40, 95);
+                color: white;
+                border-radius: 8%;
+                padding: 10px 10px;
+                width: 35%;
+                margin-left: 10%;
 
-    <style>
-        div.container{
-            width: max-content;
-            text-align: left;
-        }
-        tr td:nth-of-type(1){
-            text-align: right;
-        }
-        fieldset{
-            border: 1px 0px 0px 0px;
-        }
-        legend{
-            margin: 0 auto;
-            
-        }
+            }
+            .twitter{
+                background-color:rgb(0, 145, 145) ;
+                color: white;
+                border-radius: 8%;
+                padding: 10px 10px;
+                width: 35%;
+                top: 50%;
+                
+            }
+			form {
+				width: max-content;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+      
+	<form>
+	<fieldset>
+        <h1>Create an account</h1>
+        <hr size="1px" width="100%" color="black">
+        <table cellspacing ="10">
+                <tr><td>Name</td><td> <input type="text" 
+                    maxlength="20" 
+                    placeholder="Shreedhar Deshmukh" 
+                    size="50"></td></tr>
 
-    </style>
+                <tr><td>Email</td><td><input type="email" 
+                    maxlength="50" 
+                    placeholder="shreedhardeshmukh@xyz.com"
+                    size="50"> </td></tr>
+        
+        <tr><td>Username</td><td>
+            <input type="text" 
+                placeholder="shree33"
+                size="50" >
+        </td></tr>
+        <tr><td>Password</td><td>
+            <input type="password" 
+                maxlength="20" 
+                size="50">
+        </td></tr>
+        <tr><td>Password</td><td>
+            <input type="password" 
+                        maxlength="20" 
+                        size="50"><br><br>
+        </td></tr>
 
-    <body>
-        <div class="container">
-            <h3>Create your account</h3>
-            <hr>
-            <table>
-                <tr>
-                    <td>Name</td>
-                    <td><input type="text" name="name"></td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td><input type="text" name="email"></td>
-                </tr>
-                <tr>
-                    <td>Username</td>
-                    <td><input type="text" name="username"></td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td><input type="text" name="password"></td>
-                </tr>
-                <tr>
-                    <td>Password Again</td>
-                    <td><input type="text" name="confirmPassword"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="button" value="Create Account"></td>
-                </tr>
-            </table>
-            <fieldset>
-                <legend>OR</legend>
-            </fieldset>
+        </table>
+        <input type="submit" class="button" value="Create an Account"> <br>
+        <br>
+        __________________________OR________________________ <br><br>
 
+        <input type="submit" class="fb" value="Facebook"> 
+        <input type="submit" class="twitter" value="Twitter"> 
 
-        </div>
-    </body>
+       
+	
+	</fieldset>
+	</form>
+	</body>
 </html>
