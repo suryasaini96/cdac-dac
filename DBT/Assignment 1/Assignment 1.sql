@@ -63,7 +63,7 @@ select null;
 create table mytable(
 	id int primary key,
     name varchar(30),
-    email varchar(20),
+    email varchar(20) unique,
     dob date
 );
 
