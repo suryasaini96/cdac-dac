@@ -44,10 +44,3 @@ select deptno from dept where deptno in
 select * from emp where job not in ('manager');
 #19
 select concat(ename, ' belongs to ', deptno) from emp;
-
-
-
-
-
-
-
