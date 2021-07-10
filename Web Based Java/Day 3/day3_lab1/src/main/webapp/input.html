@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <title>Testing Basic Inputs</title>
+  </head>
+
+  <body>
+    <form action="test_input">
+      <table style="background-color: lightgrey; margin: auto" border="1">
+        <tr>
+          <td>Enter User Name</td>
+          <td><input type="text" name="f1" /></td>
+        </tr>
+        <tr>
+          <td>Choose Favorite Colors</td>
+          <td>Blue <input type="checkbox" name="clr" value="blue" /></td>
+          <td>Red <input type="checkbox" name="clr" value="red" checked /></td>
+          <td>
+            Pink <input type="checkbox" name="clr" value="pink" checked />
+          </td>
+          <td>Yellow <input type="checkbox" name="clr" value="yellow" /></td>
+        </tr>
+        <tr>
+          <td>Choose Your Browser </td>
+          <td>Mozilla FireFox <input type="radio" name="browser" value="firefox" /></td>
+          <td>
+            MS IE <input type="radio" name="browser" value="IE 7" checked />
+          </td>
+          <td>
+            Google Chrome <input type="radio" name="browser" value="chrome" />
+          </td>
+        </tr>
+        <tr>
+          <td>Select City</td>
+          <td>
+            <select name="myselect">
+              <option value="pune">Pune</option>
+              <option value="mumbai" selected>Mumbai</option>
+              <option value="nagpur">Nagpur</option>
+              <option value="delhi">Delhi</option>
+              <option value="indore">Indore</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>About Yourself</td>
+          <td><textarea name="info"></textarea></td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Test All I/Ps" /></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
