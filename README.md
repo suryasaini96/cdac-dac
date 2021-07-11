@@ -2,7 +2,7 @@
 
 > **CDAC Pune - May '21**
 
-Contains all my eDAC assignments and notes.
+Contains all my eDAC assignments, notes and lab exam backups.
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=suryasaini96.cdac-dac)
 
