@@ -51,6 +51,7 @@ public class VoterDaoImpl implements IVoterDao{
 		return false;
 	}
 	
+	@Override
 	public void cleanUp() throws SQLException {
 		if(psAuth!=null)
 			psAuth.close();

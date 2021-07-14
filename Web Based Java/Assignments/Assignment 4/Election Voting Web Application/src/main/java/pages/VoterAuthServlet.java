@@ -79,9 +79,8 @@ public class VoterAuthServlet extends HttpServlet {
 						response.sendRedirect("status");
 					else if (voter.getStatus() == 0)
 						response.sendRedirect("candidateList");
-				} else if (voter.getRole().equals("admin")) {
-					
-				}		
+				} else if (voter.getRole().equals("admin"))
+					response.sendRedirect("adminStatus");
 			}
 		} catch(SQLException e) {
 			throw new ServletException("Error in doPost() of " + getClass().getName());

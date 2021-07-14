@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import pojos.Candidate;
@@ -18,6 +19,8 @@ public class CandidateDaoImpl implements ICandidateDao {
 	private PreparedStatement psListCandidates;
 	private PreparedStatement psGetVotes;
 	private PreparedStatement psUpdateVotes;
+	private PreparedStatement psTop2Candidates;
+	private PreparedStatement psPartyAnalysis;
 	
 	public CandidateDaoImpl() throws SQLException {
 		conn = fetchConnection();
@@ -25,6 +28,8 @@ public class CandidateDaoImpl implements ICandidateDao {
 		psListCandidates = conn.prepareStatement("select * from candidates");
 		psGetVotes = conn.prepareStatement("select votes from candidates where id=?");
 		psUpdateVotes = conn.prepareStatement("update candidates set votes=? where id=?");
+		psTop2Candidates = conn.prepareStatement("select * from candidates group by party order by sum(votes) desc limit 2");
+		psPartyAnalysis = conn.prepareStatement("select party,sum(votes) from candidates group by party");
 	}
 	
 	@Override
@@ -67,6 +72,7 @@ public class CandidateDaoImpl implements ICandidateDao {
 		return false;
 	}
 	
+	@Override
 	public void cleanUp() throws SQLException {
 		if(psNewCandidate!=null)
 			psNewCandidate.close();
@@ -78,5 +84,29 @@ public class CandidateDaoImpl implements ICandidateDao {
 			psUpdateVotes.close();
 		if(conn!=null)
 			conn.close();
+	}
+
+	@Override
+	public List<Candidate> top2Analysis() throws SQLException {
+		ResultSet rs = psTop2Candidates.executeQuery();
+		List<Candidate> top2Candidates = new ArrayList<Candidate>();
+		while(rs.next()) {
+			Candidate c = new Candidate(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
+			top2Candidates.add(c);
+		}
+		if(top2Candidates.size()==0)
+			return null;
+		return top2Candidates;
+	}
+
+	@Override
+	public LinkedHashMap<String, Integer> partywiseAnalysis() throws SQLException{
+		ResultSet rs = psPartyAnalysis.executeQuery();
+		LinkedHashMap<String,Integer> map = new LinkedHashMap<>();
+		while(rs.next())
+			map.put(rs.getString(1), rs.getInt(2));
+		if (map.size()==0)
+			return null;
+		return map;
 	}
 }

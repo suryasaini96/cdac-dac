@@ -51,7 +51,8 @@ public class CandidateListServlet extends HttpServlet {
 			List<Candidate> candidates = candidateDao.listCandidates();
 			Voter v = (Voter)session.getAttribute("voter_details");
 			if (candidates !=null) {
-				pw.print("<h5> Hello, " + v.getName() + ". Please vote here.</h5>");
+				pw.print("<h3> Hello, " + v.getName());
+				pw.print("<h3> Please vote here. </h3>");
 				pw.print("<form action='status'>");
 				pw.print("<table border=1>");
 				pw.print("<thead>");
@@ -69,6 +70,7 @@ public class CandidateListServlet extends HttpServlet {
 				});
 				pw.print("</tbody>");
 				pw.print("</table>");
+				pw.print("</br>");
 				pw.print("<input type='submit' value='Submit'>");
 				pw.print("</form>");
 			} else
