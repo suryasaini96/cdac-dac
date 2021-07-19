@@ -10,7 +10,7 @@ import dao.IVendorDao;
 import dao.VendorDaoImpl;
 import pojos.Vendor;
 
-public class GetAllVendorDetails {
+public class AllVendorDetails {
 
 	public static void main(String[] args) {
 		try(SessionFactory sf = getFactory()){

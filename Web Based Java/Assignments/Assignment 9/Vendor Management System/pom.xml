@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.app</groupId>
-  <artifactId>first-project</artifactId>
+  <artifactId>Vendor-Management-System</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>first-project</name>
-  <description>My First Maven &amp; Hibernate Project</description>
+  <name>Vendor-Management-System</name>
+  <description>Vendor Management System</description>
   <build>
 		<plugins>
 			<plugin>
@@ -17,7 +17,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>My First Maven &amp; Hibernate Project</finalName>
+		<finalName>Vendor Management System</finalName>
 
 	</build>
 	<dependencies>
