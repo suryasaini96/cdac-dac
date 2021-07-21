@@ -1,15 +1,14 @@
 package pojos;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="vendor")
-public class Vendor {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "vendor_id")
-	private Long id;
+public class Vendor extends BaseEntity {
 	@Column(length = 20)
 	private String name;
 	@Column(length = 20, unique = true)
@@ -20,6 +19,8 @@ public class Vendor {
 	private double regAmount;
 	@Column(name = "reg_date")
 	private LocalDate regDate;
+	@OneToMany(mappedBy = "acc_owner", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<BankAccount> accounts = new ArrayList<>();
 	
 	public Vendor() {
 		super();
@@ -34,12 +35,6 @@ public class Vendor {
 		this.regDate = regDate;
 	}
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}
@@ -70,9 +65,22 @@ public class Vendor {
 	public void setRegDate(LocalDate regDate) {
 		this.regDate = regDate;
 	}
+	
+	public List<BankAccount> getAccounts() {
+		return accounts;
+	}
+
+	public void setAccounts(List<BankAccount> accounts) {
+		this.accounts = accounts;
+	}
+	
+	public void addAccount(BankAccount acc) {
+		accounts.add(acc);
+	}
+
 	@Override
 	public String toString() {
-		return "Vendor [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", regAmount="
+		return "Vendor [id=" + super.getId() + ", name=" + name + ", email=" + email + ", password=" + password + ", regAmount="
 				+ regAmount + ", regDate=" + regDate + "]";
 	}
 	
