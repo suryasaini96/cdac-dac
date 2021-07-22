@@ -1,0 +1,3 @@
+Studied:
+1. Servlet life cycle
+2. MVC arch.
