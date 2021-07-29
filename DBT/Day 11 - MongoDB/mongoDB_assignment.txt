@@ -1,0 +1,19 @@
+use student;
+
+db.users.insert({user_id: "abc1", firstName: "Steve", lastName: "Haines", age: 39, gender : "M"});
+db.users.insert({user_id: "abc2", firstName: "Michael", lastName: "Obama", age: 25, gender : "M"});
+db.users.insert({user_id: "xyz1", firstName: "Sample Name", lastName: "Example", age: 24, gender : "M"});
+db.users.insert({user_id: "xyz1", firstName: "Sample Name", lastName: "Kumari", age: 24, gender : "M"});
+
+db.users.find();
+db.users.find().sort({age: 1});
+db.users.find({name: "Kumari"});
+db.users.find({gender: "M"});
+db.users.find({age: {$lt:30}},{firstName:1, lastName: 1});
+db.users.find({age: {$gt:30}});
+db.users.find({age: {$eq:57}});
+db.users.updateOne({user_id: "abc10"}, {$set: {age: 73}});
+db.users.updateOne({user_id: "abc4"}, {$inc: {age: 3}});
+
+
+

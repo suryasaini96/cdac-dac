@@ -1,0 +1,10 @@
+Eclipse Maven project name : spring_boot_mvc_vms1
+
+Desc : Spring Boot Vendor Management System CRUD(includes update) MVC based web app
+Layers : Controller, Service, DAO , POJOs , DB
+
+I have separated User Dao only for authentication & Vendor Dao for vendor related DB operations
+
+For complete understanding of, vendor registration n update , first refer to : "day15-data\day15-help\regarding form binding.txt" & then trace the entire flow in top-down manner.
+
+In case of any problems , contact me.
