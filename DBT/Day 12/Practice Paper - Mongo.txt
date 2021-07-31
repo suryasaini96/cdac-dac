@@ -1,0 +1,63 @@
+* Create database EMP and Make Collection With name "EMPL" and Follow Queries 
+
+*Created Database
+> use emp
+ switched to DB emp
+ 
+*Create Collection
+> db.createCollection("empl")
+
+*Insert Records Into EMPL Collection
+> db.empl.insert([
+ {no:1,name:"ST",salary:2000,role:"OB"},
+ {no:2,name:"MSD",salary:1500,role:"WK"},
+ {no:3,name:"YS",salary:1000,role:"ALR"},
+ {no:4,name:"RD",salary:1000,role:"MOB"},
+ {no:5,name:"RS",salary:500,role:"OB"},
+ {no:6,name:"BK",salary:500,role:"MOB"},
+ {no:7,name:"VK",salary:300,role:"BW"},
+ {no:8,name:"JB",salary:400,role:"BW"},
+ {no:9,name:"HP",salary:400,role:"ALR"},
+ {no:10,name:"VS",salary:300,role:"OB"}])
+
+*Update Salary Of Employee where Name is "ST" by +8000
+
+*Update Salary Of All Employee by giving an increment of +4000 each
+
+*update role of "MSD" as "C and WK"
+
+*Add a New Field remark to document with name "RS" set Remark as WC
+
+*Add a New Field As Number 11,name AK,Salary 10000,role coch without using insert statement. But for Doing So You should have a Record Added woth number 11.
+
+*remove added New Field
+
+*Update the Field "RD" by multiplying with salary by 2
+
+*To Find Document From the empl collection where name begins with S
+
+*To Find Document From the empl collection where name begins with R
+
+*To Find Document From the empl collection where name ends with K
+
+*To Find Document From the empl collection where name ends with D
+
+*To Find Document From the empl collection where name has S in any position
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+Regular Expression
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+(Note: Use Case sensitive allow For that write in Option: "i")
+
+* To Find Document From the empl collection where name begins with S
+
+* To Find Document From the empl collection where name begins with S
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+ Use of $in and $nin (in and notin)
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+(Note: There will not use {} braces in that $in and $nin)
+
+* Display Documents where in empl collection Field have OB,MOB 
+
+* Display Documents where in empl collection Field not have OB,MOB

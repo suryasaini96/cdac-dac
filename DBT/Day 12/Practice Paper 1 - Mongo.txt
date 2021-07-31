@@ -1,0 +1,32 @@
+Insert Documents in emp collection
+> db.emp.insert([
+{eno:1,ename:"Sachin",sal:6000,desig:"manager",dept:"Purchase"},
+{eno:2,ename:"Dhoni",sal:5000,desig:"manager",dept:"Sales"},
+{eno:3,ename:"Kohli",sal:3000,desig:"clerk",dept:"Admin"},
+{eno:4,ename:"Dravid",sal:4000,desig:"manager",dept:"Purchase"},
+{eno:5,ename:"Bumrah",sal:3500,desig:"manager",dept:"Sales"},
+{eno:6,ename:"Jadeja",sal:2500,desig:"clerk",dept:"Admin"},
+{eno:7,ename:"Rohit",sal:4000,desig:"manager",dept:"Sales"}])
+
+1) List all emplyees name with their salary who are in admin department.
+2) List all emplyees name with their salary and designation who are in Purchase department.
+3) List all employees no, name, salary who are in the Sales department and Designation is Manager.
+4) calculate Annual salary of each emplyees
+5) Convert the names of the emplyees in Lower case and display only no and name of each emplyees.
+db.emp.aggregate([{$project:{eno:1,ename:1,_id:0,Employee:{$toLower:['$ename']}}}])
+6) Display each document of the collection emplyee the total salary of each emplyee should be displayed department wise.
+$concat
+7) Findout Total Salary manager designation wise.
+8) Find The Average Salary of each department in emp collection.
+9) Find The MAX Salary of each department in emp collection.
+10)update The Document with null value in desig field where name is kohli.
+11) To remove design Field having Null Values in emp Collection.
+
+========================
+
+>db.foods.insert([
+{_id:1,fruits:['banana','apple','cherry']},{_id:2,fruits:['orange','watermelon','mango']},{_id:3,fruits:['pinaple','strawberry','grapes']},{_id:4,fruits:['banana','strawberry','grapes']},{_id:5,fruits:['orange','grapes']}])
+
+display those documents from in food collection which has fruits array consituted of banana,apple,cherry 
+
+display those documents From food Collection which has fruits array having a banana as an element.
