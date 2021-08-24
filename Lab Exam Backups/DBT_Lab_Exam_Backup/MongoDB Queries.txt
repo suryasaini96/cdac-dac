@@ -1,0 +1,12 @@
+db.employees.find().sort({age: 1});
+db.employees.find({gender: "Male"});
+db.employees.find({age: {$eq:57}});
+db.employees.find({ $or: [{commission_pct: {$eq: 0}},{salary: {$gt: 12000}}] }).sort({department_id: 1, salary: -1});
+db.employees.updateOne({first_name: "Steve", last_name: "Rogers"}, {$set: {employee_id: 210}}, {upsert: true});
+
+
+
+
+
+
+
