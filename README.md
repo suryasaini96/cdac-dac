@@ -23,7 +23,7 @@ Contains all my eDAC assignments, notes and lab exam backups.
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />        
   </a>&nbsp;&nbsp;
   
-**CDAC Placement Statistics - May'21 e-DAC batch**
+**CDAC Pune Placement Statistics - May'21 e-DAC batch**
 > Please note that these were sent to me by someone who compiled this list as CDAC never shares their complete placement statistics. These may not be 100% accurate and fully complete but fairly accurate for majority of the placements. The placements including CCPP & Local campus offically ended on December 15, 2021. Hope this gives a good idea.
 
 *As of 12th Nov 2021*
