@@ -4,7 +4,7 @@
 
 Contains all my eDAC assignments, notes and lab exam backups.
 
-> **Reason for CDAC?**
+> **Reason for CDAC**
 
 For better placement opportunities.
 
