@@ -4,6 +4,10 @@
 
 Contains all my eDAC assignments, notes and lab exam backups.
 
+> Reason for CDAC? 
+
+For better placement opportunities. Though I opted for off-campus.
+
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=suryasaini96.cdac-dac)
 
 > **Authors**
