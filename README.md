@@ -6,7 +6,7 @@ Contains all my eDAC assignments, notes and lab exam backups.
 
 > **Reason for CDAC**
 
-For better placement opportunities.
+For better placement opportunities (even if you are familiar with fundamentals and dev skills).
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=suryasaini96.cdac-dac)
 
