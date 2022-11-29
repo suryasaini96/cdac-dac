@@ -4,7 +4,7 @@
 
 Contains all my eDAC assignments, notes and lab exam backups.
 
-> **Reason for CDAC**
+> **Why CDAC?**
 
 For better placement opportunities ofcourse 🙂 (even if you are familiar with fundamentals and dev skills).
 
